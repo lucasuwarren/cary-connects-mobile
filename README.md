@@ -1,4 +1,4 @@
-#cary-connects-mobile
+# cary-connects-mobile
 An app for Downtown Cary
 
 Welcome to the Code for Cary / Heart of Cary App
