@@ -1,20 +1,23 @@
 /**
- * Create a new `Ti.UI.TabGroup`.
+ * Cary Connects startup...
  */
-var tabGroup = Ti.UI.createTabGroup();
 
-/**
- * Create the main tabs
- */
+// Create a single window app
 var MapController = require('/mvc/MapController');
-tabGroup.addTab(MapController.createTab({
-    windowTitle: 'Cary Connects',
-    title: 'Parking',
-    icon: 'assets/icons/815-car.png',
-    activeIcon: 'assets/icons/815-car-selected.png'
-}));
+var mapWindow = MapController.createWindow({
+  windowTitle: 'Cary Connects',
+  title: 'Parking',
+  fullscreen: false
+});
 
-/**
- * Open the tabGroup
- */
-tabGroup.open();
+if (Ti.UI.Android) {
+  mapWindow.open();
+}
+
+if (Ti.UI.iOS) {
+  var mainWindow = Titanium.UI.iOS.createNavigationWindow({
+    window: mapWindow
+  });
+  mapWindow.navigationWindow = mainWindow;
+  mainWindow.open();
+}

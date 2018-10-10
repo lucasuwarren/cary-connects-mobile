@@ -1,106 +1,81 @@
+exports.createMapView = function (win) {
 
-exports.createView = function (win) {
+  // Create the map
+  var Map = require('ti.map');
+  var mapView = Map.createView({
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    mapType: Map.NORMAL_TYPE,
+    region: {
+      latitude: 35.789474,
+      longitude: -78.781173,
+      latitudeDelta: 0.05,
+      longitudeDelta: 0.05
+    },
+    showPointsOfInterest: true,
+    showsTraffic: true,
+    animate: true,
+    regionFit: true,
+    userLocation: true,
+    annotations: []
+  });
+  win.add(mapView);
 
-    /**
-     * Show a map
-     */
-    var Map = require('ti.map');
-    var mapView = Map.createView({
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        mapType: Map.NORMAL_TYPE,
-        region: {
-            latitude: 35.789474,
-            longitude: -78.781173,
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05
-        },
-        showPointsOfInterest: true,
-        showsTraffic: true,
-        animate: true,
-        regionFit: true,
-        userLocation: true,
-        annotations: []
-    });
-    win.add(mapView);
+  return mapView;
+};
 
-    function updateMap(jsonResponse) {
+exports.createSearchField = function (win, mapView) {
 
-        /**
-         * Parse records and polygons
-         * @type {any}
-         */
-        var json = JSON.parse(jsonResponse);
-        console.log(JSON.stringify(json));
+  // Place a view behind the search field to hold other buttons, etc.
+  var searchView = Ti.UI.createView({
+    top: 10 + 'dp',
+    left: 10 + 'dp',
+    right: 10 + 'dp',
+    height: 45 + 'dp',
+    borderWidth: 1 + 'dp',
+    borderColor: '#999999',
+    backgroundColor: '#ffffff'
+  });
 
-        if (json.features) {
-            console.log("Found features...");
-            var polygonData = [];
-            for (var i = 0; i < json.features.length; i++) {
-                console.log("Feature " + i);
-                var record = json.features[i];
-                if (record.geometry && record.geometry.coordinates) {
-                    var coordinates = record.geometry.coordinates[0];
-                    var points = [];
-                    for (var j = 0; j < coordinates.length; j++) {
-                        console.log("Coordinate: " + j);
-                        var point = {
-                            latitude: coordinates[j][1],
-                            longitude: coordinates[j][0]
-                        };
-                        points.push(point);
-                    }
-                    var polygon = Map.createPolygon({
-                        points: points,
-                        strokeColor: 'red',
-                        fillColor: 'blue',
-                        strokeWidth: 1
-                    });
-                    if (Ti.UI.Android) {
-                        mapView.addPolygon(polygon);
-                    } else {
-                        polygonData.push(polygon);
-                    }
-                }
-            }
-            if (!Ti.UI.Android) {
-                mapView.addPolygons(polygonData);
-            }
-        }
-    }
+  // Create the search field
+  var searchField = Ti.UI.createTextField({
+    autocorrect: false,
+    hintText: 'Search Cary',
+    left: 42 + 'dp',
+    right: 10 + 'dp',
+    height: Ti.UI.SIZE,
+    // suppressReturn: false,
+    autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS,
+    clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS,
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+    // returnKeyType: Ti.UI.RETURNKEY_NEXT,
+    // keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION,
+    color: '#333333',
+    hintTextColor: '#999999',
+    backgroundColor: '#ffffff'
+  });
+  searchView.add(searchField);
 
-    /**
-     * Access the site data
-     * @type {string}
-     */
-    var url = "http://codeforcary.org/parking/parking.geojson";
-    var client = Ti.Network.createHTTPClient({
-        onload : function(e) {
-            console.log("Received server text: " + this.responseText);
-            updateMap(this.responseText);
-        },
-        onerror : function(e) {
-            Ti.API.debug(e.error);
-            alert('error: falling back to data file');
+  searchField.addEventListener('return', function () {
+    searchField.blur();
+  });
 
-            /**
-             * Access a sample file
-             */
-            var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,
-                'assets/data/parking.geojson');
-            var blob = file.read();
-            var text = blob.text;
-            blob = null;
-            file = null;
-            updateMap(text);
-        },
-        timeout : 5000  // in milliseconds
-    });
-    // Prepare the connection
-    client.open("GET", url);
-    // Send the request
-    console.log("Opening connection to: " + url);
-    client.send();
+  var searchImage = Ti.UI.createImageView({
+    image: '/assets/icons/06-magnify.png',
+    preventDefaultImage: true,
+    left: 15 + 'dp',
+    width: 20 + 'dp',
+    height: 20 + 'dp',
+    tintColor: '#999999'
+  });
+  searchView.add(searchImage);
+
+  win.add(searchView);
+  return searchField;
+};
+
+exports.createListView = function (win, mapView) {
+
 };
