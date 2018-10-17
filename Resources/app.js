@@ -15,6 +15,7 @@ if (Ti.UI.Android) {
 }
 
 if (Ti.UI.iOS) {
+  // Wrap the window in a navigation window
   var mainWindow = Titanium.UI.iOS.createNavigationWindow({
     window: mapWindow
   });
