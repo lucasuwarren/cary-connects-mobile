@@ -1,6 +1,3 @@
-// var parkingLots = {};
-// var businesses = {};
-
 exports.createTab = function (args) {
 
   var win = this.createWindow(args);

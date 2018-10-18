@@ -66,7 +66,7 @@ exports.createListView = function (win, view) {
     bottom: 20 + 'dp',
     templates: {'template': template},
     defaultItemTemplate: 'template',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#92bfd6',
     visible: false
   });
   var listSection = Ti.UI.createListSection({});

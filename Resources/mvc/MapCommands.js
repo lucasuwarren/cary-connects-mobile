@@ -1,3 +1,6 @@
+var parkingLots;
+var places;
+
 // Load the cached parking lots
 function loadParkingLots() {
   // @todo check for a cached file
@@ -10,7 +13,9 @@ function loadParkingLots() {
   blob = null;
   file = null;
 
-  Ti.App.fireEvent('UpdateParkingLots', text);
+  parkingLots = JSON.parse(text);
+  Ti.App.fireEvent('UpdateParkingLots', parkingLots);
+  exports.retrievePlaces(1);
 }
 
 exports.retrieveParkingLots = function (pass) {
@@ -20,16 +25,16 @@ exports.retrieveParkingLots = function (pass) {
   var client = Ti.Network.createHTTPClient({
     onload: function (e) {
       // @todo cache the file for later
-
-      var jsonResponse = {data: this.responseText};
-      Ti.App.fireEvent('UpdateParkingLots', jsonResponse);
+      parkingLots = JSON.parse(this.responseText);
+      Ti.App.fireEvent('UpdateParkingLots', parkingLots);
+      exports.retrievePlaces(1);
     },
     onerror: function (e) {
       Ti.API.debug(e.error);
       // Try again
       if (pass <= 2) {
         setTimeout(function () {
-          retrieveParkingLots(pass + 1);
+          exports.retrieveParkingLots(pass + 1);
         }, 1000);
         return;
       }
@@ -45,7 +50,7 @@ exports.retrieveParkingLots = function (pass) {
           loadParkingLots();
           return;
         }
-        retrieveParkingLots(pass + 1);
+        exports.retrieveParkingLots(pass + 1);
       });
       dialog.show();
     },
@@ -57,19 +62,26 @@ exports.retrieveParkingLots = function (pass) {
 
 };
 
-exports.retrievePlaces = function () {
+exports.retrievePlaces = function (pass) {
 
   // Access the places using HTTP client
   var url = "https://raw.githubusercontent.com/CodeForCary/cary-connects-data/master/business.geojson";
   var client = Ti.Network.createHTTPClient({
     onload: function (e) {
       // @todo write the file for later use
-
-      var jsonResponse = {data: this.responseText};
-      Ti.App.fireEvent('UpdatePlaces', jsonResponse);
+      places = JSON.parse(this.responseText);
+      Ti.App.fireEvent('UpdatePlaces', places);
     },
     onerror: function (e) {
       Ti.API.debug(e.error);
+      // Try again
+      if (pass <= 2) {
+        setTimeout(function () {
+          exports.retrievePlaces(pass + 1);
+        }, 1000);
+        return;
+      }
+      // Let the user choose to try again
       var dialog = Titanium.UI.createAlertDialog({
         title: 'A network issue occurred',
         message: "Try again?",
@@ -78,11 +90,11 @@ exports.retrievePlaces = function () {
       });
       dialog.addEventListener('click', function (de) {
         if (de.index === de.source.cancel) {
-          // @todo loadPlaces();
-
+          // @todo
+          // loadPlaces();
           return;
         }
-        retrievePlaces();
+        exports.retrievePlaces(pass + 1);
       });
       dialog.show();
     },

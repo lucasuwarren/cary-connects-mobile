@@ -6,11 +6,12 @@ at nearby places you plan to visit.
 
 
 # To Do
-
-* Access the business data for searching
-* Populate the search results view from the business data
+* Windows documentation for Android
+* Store the business data from the endpoint into a SQLite database
+* Write a search algorithm to search the database
+* Populate the search results view from database
 * When a business is selected:
-  - Show the business on the map
+  - Show the business on the map using a map marker with marker-color and marker-symbol
   - Hide the search results
   - Show the PlaceCardView
 * Create the PlaceCardView:
@@ -19,6 +20,6 @@ at nearby places you plan to visit.
 * Find parking by filters: handicap, electric, other conditions
 * Add a Welcome screen/slideshow
   - Welcome to Cary Connect
-    We are a community working together to share information on Cary, North Carolina.
+    We are a community working together to share information about Cary, North Carolina.
   - Search for places and find parking
     Get details on where to park during your next visit.

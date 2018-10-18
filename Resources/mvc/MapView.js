@@ -18,15 +18,14 @@ exports.createMapView = function (win) {
     showsTraffic: true,
     animate: true,
     regionFit: true,
-    userLocation: true,
+    // userLocation: true,
     annotations: []
   });
   win.add(mapView);
 
   // Add Global Event Listeners
-  Ti.App.addEventListener('UpdateParkingLots', function (ev) {
+  Ti.App.addEventListener('UpdateParkingLots', function (json) {
     // Updates the parking lots on the map
-    var json = JSON.parse(ev.data);
     console.log(JSON.stringify(json));
     if (json !== undefined && json.features) {
       console.log("Found features...");
