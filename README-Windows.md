@@ -28,7 +28,7 @@ After this is completed I also recommend running the emulator just to make sure 
 > **NOTE:** Your machine must have virtualization capabilities in order to emulate android devices. This may require you going into your computers BIOS and simply enabling it.
 ## Replacing your GUID in ```tiapp.xml```
 
-Applications build with Titanium have unique GUIDs associated with them which seem to be machine specific. Trying to build and or run the project without your personal GUID will prompt
+Applications built with Titanium have unique GUIDs associated with them which seem to be machine specific. Trying to build and or run the project without your personal GUID will prompt
 you with an error
 ```shell
 Application is not registered.
