@@ -53,11 +53,30 @@ Find and copy ```YOUR_GUID``` which will be a series of letters and numbers.
 Replace the **GUID** in the project with ```YOUR_GUID```
 > . . ./cary-connects-mobile/tiapp.xml
 
+
+### Setting your Google Maps API Key
+We will be using Google maps for our android application and this requires an API key. You will have to visit this link: [Google Cloud Platform Console](https://console.cloud.google.com/google/maps-apis), and follow the directions in order to create your API key.
+This requires you to set up a billing account associated with your google account, but it is completely free and does not actually charge you anything.
+> We can provide you with a google maps API key if you do not want to do this. Just let us know at a meeting or on the Slack channel.
+
+Once you have obtained your API key, you must set it within the ```tiapp.xml``` file.
+```xml
+<android xmlns:android="http://schemas.android.com/apk/res/android">
+  <manifest>
+    <application>
+      <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY_HERE"/>
+    </application>
+  </manifest>
+</android>
+```
+
 ### Build and run app
 Given that everything has been installed and configured correctly, navigate to the project folder within your **CLI** and you can **build and run** the project using the command:
 ```shell
 appc run --platform android
 ```
-Which will launch your emulator, create the .apk and install it on your android virtual device.
+Which will launch your emulator, create the .apk, and install it on your android virtual device.
 
 ![cary connects app splash screen](https://image.ibb.co/mF19d0/app-icon-frame-framed.png)
+
+> **NOTE: If you are still running into trouble with setting up your development environment and getting everything working, let us know during a meeting and we can further help you.**
