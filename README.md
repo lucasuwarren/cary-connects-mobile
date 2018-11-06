@@ -4,12 +4,10 @@ An app for Downtown Cary
 Welcome to the Code for Cary / Heart of Cary App. With this app you can discover Town of Cary parking lots and locate parking
 at nearby places you plan to visit.
 
+* See a map of parking locations
+* Search for local businesses
 
 # To Do
-* Windows documentation for Android
-* Store the business data from the endpoint into a SQLite database
-* Write a search algorithm to search the database
-* Populate the search results view from database
 * When a business is selected:
   - Show the business on the map using a map marker with marker-color and marker-symbol
   - Hide the search results
