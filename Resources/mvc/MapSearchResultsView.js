@@ -94,26 +94,27 @@ exports.createListView = function (win, view) {
     console.log('MapSearchResultsView.UpdateSearchResults() called');
 
     // Determine if results can be shown
-    var text = ev.text;
-    if (text === undefined || text.length === 0) {
+    var records = ev.records;
+    if (records === undefined || records.length === 0) {
       listView.hide();
       return;
     }
 
     // Determine the search results
     var rowData = [];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < records.length; i++) {
+
+      var thisRecord = records[i];
 
       var rowParameters = {
         title: {
-          text: 'Test Place ' + i
+          text: thisRecord.name
         },
         address: {
-          text: '100 Main Street'
+          text: thisRecord.address
         },
         properties: {
-          // @todo use an actual itemId
-          itemId: 'Test Place ' + i,
+          itemId: thisRecord.itemId,
           accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE,
           backgroundColor: '#92bfd6'
         }

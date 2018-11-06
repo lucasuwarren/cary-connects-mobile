@@ -1,10 +1,11 @@
-var parkingLots;
-var places;
+var parkingLots = {};
+var parkingLotsArray = [];
+var places = {};
+var placesArray = [];
 
 // Load the cached parking lots
 function loadParkingLots() {
   // @todo check for a cached file
-
   // Use the app's included file
   var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,
     'assets/data/parking.geojson');
@@ -13,9 +14,27 @@ function loadParkingLots() {
   blob = null;
   file = null;
 
-  parkingLots = JSON.parse(text);
-  Ti.App.fireEvent('UpdateParkingLots', parkingLots);
+  var json = JSON.parse(text);
+  processParkingLotRecords(json);
   exports.retrievePlaces(1);
+}
+
+function processParkingLotRecords (json) {
+  // New data set
+  if (json !== undefined && json.features) {
+    for (var i = 0; i < json.features.length; i++) {
+      var record = json.features[i];
+      var indexValue = 'index-' + i;
+      var thisRecord = {
+        index: i,
+        itemId: indexValue,
+        name: record['name']
+      };
+      parkingLots[indexValue] = thisRecord;
+      parkingLotsArray.push(thisRecord);
+    }
+    Ti.App.fireEvent('UpdateParkingLots', json);
+  }
 }
 
 exports.retrieveParkingLots = function (pass) {
@@ -25,8 +44,9 @@ exports.retrieveParkingLots = function (pass) {
   var client = Ti.Network.createHTTPClient({
     onload: function (e) {
       // @todo cache the file for later
-      parkingLots = JSON.parse(this.responseText);
-      Ti.App.fireEvent('UpdateParkingLots', parkingLots);
+      var json = JSON.parse(this.responseText);
+      processParkingLotRecords(json);
+      // Call the next data-set
       exports.retrievePlaces(1);
     },
     onerror: function (e) {
@@ -62,6 +82,30 @@ exports.retrieveParkingLots = function (pass) {
 
 };
 
+function processPlaceRecords (json) {
+  // New data set
+  if (json !== undefined && json.features) {
+    for (var i = 0; i < json.features.length; i++) {
+      var record = json.features[i];
+      var indexValue = 'index-' + i;
+      var thisRecord = {
+        index: i,
+        itemId: indexValue,
+        name: record.properties['name'],
+        address: record.properties['address'],
+        website: record.properties['website'],
+        phone: record.properties['phone'],
+        note: record.properties['note'],
+        latitude: record.geometry.coordinates[1],
+        longitude: record.geometry.coordinates[0]
+      };
+      places[indexValue] = thisRecord;
+      placesArray.push(thisRecord);
+    }
+    Ti.App.fireEvent('UpdatePlaces', json);
+  }
+}
+
 exports.retrievePlaces = function (pass) {
 
   // Access the places using HTTP client
@@ -69,8 +113,8 @@ exports.retrievePlaces = function (pass) {
   var client = Ti.Network.createHTTPClient({
     onload: function (e) {
       // @todo write the file for later use
-      places = JSON.parse(this.responseText);
-      Ti.App.fireEvent('UpdatePlaces', places);
+      var json = JSON.parse(this.responseText);
+      processPlaceRecords(json);
     },
     onerror: function (e) {
       Ti.API.debug(e.error);
@@ -105,3 +149,68 @@ exports.retrievePlaces = function (pass) {
   client.send();
 
 };
+
+// Filter function
+var filterProperty = function (place, searchText) {
+  if (!place['name']) {
+    return false;
+  }
+  if (place['name'].toLowerCase().includes(searchText.toLowerCase())) {
+    return true;
+  }
+  // Check the filters
+  // if (place['marker-symbol'].toLowerCase().includes(searchText.toLowerCase())) {
+  //   return true;
+  // }
+  return false;
+};
+
+exports.searchPlaces = function (searchText, maxResults) {
+  if (placesArray == null || placesArray.length === 0 || searchText === undefined || searchText.length === 0) {
+    console.log("No records to search");
+    return [];
+  }
+  // Filter the records
+  var results = [];
+  for (var i in placesArray) {
+    var val = placesArray[i];
+    if (filterProperty(val, searchText)) {
+      results.push(val);
+    }
+  }
+  // Sort the results
+  results.sort(function (a, b) {
+
+    var searchTerm = searchText.toLowerCase();
+    var item1 = a.name.toLowerCase();
+    var item2 = b.name.toLowerCase();
+
+    // Show 'starts with' first
+    if (item1.indexOf(searchTerm) === 0 &&
+      item2.indexOf(searchTerm) !== 0) {
+      return -1;
+    }
+    if (item1.indexOf(searchTerm) !== 0 &&
+      item2.indexOf(searchTerm) === 0) {
+      return 1;
+    }
+    // Then alphabetical
+    if (item1 < item2) {
+      return -1;
+    }
+    if (item1 > item2) {
+      return 1;
+    }
+    return 0;
+  });
+  // Return the max size
+  if (maxResults) {
+    return results.slice(0, maxResults);
+  }
+  return results;
+};
+
+exports.parkingLots = parkingLots;
+exports.parkingLotsArray = parkingLotsArray;
+exports.places = places;
+exports.placesArray = placesArray;

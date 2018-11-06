@@ -1,5 +1,7 @@
 // This view holds the search field
 
+var MapCommands = require('/mvc/MapCommands');
+
 exports.createSearchField = function (win) {
 
   // Place a view behind the search field to hold other buttons, etc.
@@ -53,8 +55,9 @@ exports.createSearchField = function (win) {
 
   searchField.addEventListener('change', function (ev) {
     var text = ev.value;
+    var records = MapCommands.searchPlaces(text);
     Ti.App.fireEvent('UpdateSearchResults', {
-      text: text
+      records: records
     });
   });
 
