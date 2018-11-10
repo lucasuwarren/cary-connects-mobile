@@ -1,3 +1,5 @@
+var MapCommands = require('/mvc/MapCommands');
+
 var template = {
   properties: {
     height: '60dp'
@@ -78,14 +80,13 @@ exports.createListView = function (win, view) {
 
     // Find the record
     var itemId = ev.itemId;
-
+    var record = MapCommands.places[itemId];
     Ti.App.fireEvent('HideSearch');
     Ti.App.fireEvent('ShowPlaceCard', {
-      record: {
-        // @todo access the record instead
-        title: itemId,
-        address: '100 Main Street'
-      }
+      record: record
+    });
+    Ti.App.fireEvent('ShowMapMarker', {
+      record: record
     });
   });
 

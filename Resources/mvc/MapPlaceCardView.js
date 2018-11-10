@@ -16,6 +16,8 @@ exports.createPlaceCardView = function (win) {
     backgroundColor: '#6FBE51'
   });
 
+  // Place Details
+
   var titleLabel = Ti.UI.createLabel({
     top: '20dp',
     left: '20dp',
@@ -24,6 +26,10 @@ exports.createPlaceCardView = function (win) {
     text: 'Name of business'
   });
   placeCardView.add(titleLabel);
+
+
+
+
 
   var closeButton = Ti.UI.createButton({
     top: '10dp',
@@ -47,11 +53,13 @@ exports.createPlaceCardView = function (win) {
 
     // Populate the card with the data
     var record = ev.record;
-    titleLabel.text = record.title;
+    titleLabel.text =
+      record.name + '\n' +
+      record.address;
 
     // Bring it into view
     placeCardView.animate({
-      top: '60%',
+      top: '75%',
       bottom: -20 + 'dp',
       opacity: 1,
       curve: Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT,
