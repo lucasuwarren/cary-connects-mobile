@@ -47,8 +47,8 @@ exports.createMapView = function (win) {
           }
           var polygon = Map.createPolygon({
             points: points,
-            strokeColor: '#000000',
-            fillColor: '#0090BB',
+            strokeColor: '#50000000',
+            fillColor: '#500090BB',
             strokeWidth: 1
           });
 
@@ -92,6 +92,9 @@ exports.createMapView = function (win) {
       // longitudeDelta: region.longitudeDelta,
       animate:true
     });
+
+    mapView.selectAnnotation(annotation);
+
   });
 
   return mapView;
