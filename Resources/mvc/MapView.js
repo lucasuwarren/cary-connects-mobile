@@ -1,7 +1,8 @@
+var Map = require('ti.map');
+
 exports.createMapView = function (win) {
 
   // Create the map
-  var Map = require('ti.map');
   var mapView = Map.createView({
     top: 0,
     left: 0,
@@ -64,6 +65,33 @@ exports.createMapView = function (win) {
         mapView.addPolygons(polygonData);
       }
     }
+  });
+
+  Ti.App.addEventListener('ShowMapMarker', function (ev) {
+
+    var record = ev.record;
+
+    mapView.removeAllAnnotations();
+
+    var annotation = Map.createAnnotation({
+      latitude: record.latitude,
+      longitude: record.longitude,
+      title: record.name,
+      subtitle: record.address,
+      pincolor: Map.ANNOTATION_RED
+    });
+    mapView.addAnnotation(annotation);
+
+    // var region = mapView.getRegion();
+    mapView.setLocation({
+      latitude: record.latitude,
+      longitude: record.longitude,
+      latitudeDelta: 0.006,
+      longitudeDelta: 0.006,
+      // latitudeDelta: region.latitudeDelta,
+      // longitudeDelta: region.longitudeDelta,
+      animate:true
+    });
   });
 
   return mapView;
