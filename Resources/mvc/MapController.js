@@ -36,9 +36,15 @@ exports.createWindow = function (args) {
   var MapSearchHelpView = require('/mvc/MapSearchHelpView');
   var MapSearchResultsView = require('/mvc/MapSearchResultsView');
   var MapPlaceCardView = require('/mvc/MapPlaceCardView');
+  var WelcomeScreenView = require('/mvc/WelcomeScreenView');
+
+
 
   // The Map
   var mapView = MapView.createMapView(win);
+
+  //Welcome screen
+  var welcomeScreenView = WelcomeScreenView.createWelcomeScreenView(win);
 
   // The Map Search and Results
   var searchField = MapSearchView.createSearchField(win);
