@@ -15,49 +15,18 @@ exports.createPlaceCardView = function (win) {
     bottom: -clientHeight - 20 + 'dp',
     left: 0,
     right: 0,
-    opacity: 0,
+    opacity: 0
+  });
+
+  var backgroundView = Ti.UI.createView({
+    top: 20 + 'dp',
+    right: 0,
+    bottom: 0,
+    left: 0,
     borderRadius: 15 + 'dp',
     backgroundColor: '#6FBE51'
   });
-
-  placeCardView.addEventListener('touchmove', function (e) {
-    var points = e.source.convertPointToView({
-      x: e.x,
-      y: e.y
-    }, win);
-
-    var top = points.y;
-    if (Ti.UI.Android) {
-      top = top / (Ti.Platform.displayCaps.dpi / 160);
-      console.log("ch: " + clientHeight + " y:" + top + " diff:" + (clientHeight - top));
-    }
-
-    // Upper max (1/2 screen)
-    if (top < clientHeight / 2) {
-      console.log("At max");
-      return;
-    }
-    // Lower max
-    if ((clientHeight - top) < 144) {
-      console.log("At min");
-      return;
-    }
-    console.log("Updating to : " + top);
-
-    placeCardView.applyProperties({
-      top: top + 'dp'
-    });
-  });
-
-
-  var handleView = Ti.UI.createView({
-    top: '8dp',
-    width: '35dp',
-    height: '6dp',
-    borderRadius: '2dp',
-    backgroundColor: '#0090BB'
-  });
-  placeCardView.add(handleView);
+  placeCardView.add(backgroundView);
 
   // Place Details
   var scrollView = Ti.UI.createScrollView({
@@ -70,7 +39,7 @@ exports.createPlaceCardView = function (win) {
     showHorizontalScrollIndicator: false,
     layout: 'vertical'
   });
-  placeCardView.add(scrollView);
+  backgroundView.add(scrollView);
 
   var titleLabel = Ti.UI.createLabel({
     top: '0dp',
@@ -180,8 +149,57 @@ exports.createPlaceCardView = function (win) {
     }
   });
 
+  // Allow use to drag the view
+  var handleAreaView = Ti.UI.createView({
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 45 + 'dp'
+  });
+  placeCardView.add(handleAreaView);
+
+  var handleView = Ti.UI.createView({
+    top: '30dp',
+    width: '35dp',
+    height: '6dp',
+    borderRadius: '2dp',
+    backgroundColor: '#0090BB'
+  });
+  handleAreaView.add(handleView);
+
+  handleAreaView.addEventListener('touchmove', function (e) {
+    var points = e.source.convertPointToView({
+      x: e.x,
+      y: e.y
+    }, win);
+
+    var top = points.y;
+    if (Ti.UI.Android) {
+      top = top / (Ti.Platform.displayCaps.dpi / 160);
+    }
+    // adjust for the handle offset
+    top -= 30;
+
+    // Upper max (1/2 screen)
+    if (top < clientHeight / 2) {
+      return;
+    }
+    // Lower max
+    if ((clientHeight - top) < 160) {
+      return;
+    }
+
+    placeCardView.animate({
+      top: top + 'dp',
+      curve: Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT,
+      duration: 50
+    }, function () {
+      // console.log('ShowPlaceCard animate finished');
+    });
+  });
+
   var closeButton = Ti.UI.createButton({
-    top: '10dp',
+    top: '30dp',
     right: '10dp',
     height: '20dp',
     width: '20dp',
@@ -194,6 +212,7 @@ exports.createPlaceCardView = function (win) {
     Ti.App.fireEvent('HidePlaceCard');
   });
   placeCardView.add(closeButton);
+
   win.add(placeCardView);
 
   // Add Global Event Listeners
