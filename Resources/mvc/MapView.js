@@ -36,7 +36,7 @@ exports.createMapView = function (win) {
         console.log("Feature " + i);
         var record = json.features[i];
         console.log("lotCentre: " + record.properties.lotcenter);
-        var lotCenter = record.properties.lotcenter.split(',');        
+        var lotCenter = record.properties.lotcenter.split(',');
         //console.log("name: " + record.properties.name);
         if (record.geometry && record.geometry.coordinates) {
           var coordinates = record.geometry.coordinates[0];
@@ -56,38 +56,31 @@ exports.createMapView = function (win) {
             strokeWidth: 1
           });
 
-          // @todo Store the record and access to the polygon
-          //Start
           //Labels for parking polygons
           var price = Ti.UI.createLabel({
             //text : "P",//Number=12 Input from server
-            color : 'black',
-            font : {fontSize:'15dp',font:"monospace",fontWeight:"bold"},
-            height : '30dp',
-            width : '30dp',
-            left: '50%',     
-            backgroundImage:'/assets/icons/icons8-parking-50.png',
+            color: 'black',
+            font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"},
+            height: '30dp',
+            width: '30dp',
+            left: '50%',
+            backgroundImage: '/assets/icons/icons8-parking-50.png'
           });
           //Convert labels into images to be used in an annotation
           var anImageView = Ti.UI.createImageView({
-            image : price.toImage(), //setting label as a blob
-            width : 'auto',
-            height : 'auto',
+            image: price.toImage(), //setting label as a blob
+            width: 'auto',
+            height: 'auto'
           });
           //Annotaion for parking polygons
-          var pin = Map.createAnnotation({            
-            // Show at the starting point
-            latitude:points[0].latitude,
-            longitude:points[0].longitude,            
-            //Center it
-            //latitude:lotCenter[0], 
-            //longitude:lotCenter[1],
+          var pin = Map.createAnnotation({
+            latitude: lotCenter[1],
+            longitude: lotCenter[0],
             title: record.properties.name,
             subtitle: "Standard: " + record.properties.stdParking + ", Handicap: " + record.properties.hcParking + ", Electric: " + record.properties.elecParking,
-            image:anImageView.toBlob() //setting ImageView as blob
+            image: anImageView.toBlob() //setting ImageView as blob
           });
           mapView.addAnnotation(pin);
-        //End
           if (Ti.UI.Android) {
             mapView.addPolygon(polygon);
           } else {
@@ -105,7 +98,6 @@ exports.createMapView = function (win) {
 
     var record = ev.record;
 
-    //mapView.removeAllAnnotations();
     mapView.removeAnnotation(LastAnnotation);
 
     var annotation = Map.createAnnotation({
@@ -125,7 +117,7 @@ exports.createMapView = function (win) {
       longitudeDelta: 0.006,
       // latitudeDelta: region.latitudeDelta,
       // longitudeDelta: region.longitudeDelta,
-      animate:true
+      animate: true
     });
   });
 
