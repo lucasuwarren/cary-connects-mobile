@@ -25,6 +25,62 @@ exports.createMapView = function (win) {
   });
   win.add(mapView);
 
+  //Reusable labels for parking polygons
+  var parkingImage;
+  if (Ti.UI.iOS) {
+    // Create a native label
+    var parkingView = Ti.UI.createView({
+      width: '20dp',
+      height: '20dp',
+      borderRadius: '3dp',
+      backgroundColor: '#3F51B5'
+    });
+    var parkingLabel = Ti.UI.createLabel({
+      text: 'P',
+      color: '#ffffff',
+      font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"}
+    });
+    parkingView.add(parkingLabel);
+    parkingImage = parkingView.toImage();
+  } else {
+    // Android issue so use this for now
+    var price = Ti.UI.createLabel({
+      color: 'black',
+      font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"},
+      height: '30dp',
+      width: '30dp',
+      left: '50%',
+      backgroundImage: '/assets/icons/icons8-parking-50.png'
+    });
+    //Convert labels into images to be used in an annotation
+    var anImageView = Ti.UI.createImageView({
+      image: price.toImage(), //setting label as a blob
+      width: 'auto',
+      height: 'auto'
+    });
+    parkingImage = anImageView.toBlob();
+  }
+
+  /*
+  // Create a go button (works on iOS)
+  var goButton = Ti.UI.createView({
+    width: '50dp',
+    height: '50dp',
+    borderWidth: '5dp',
+    borderColor: '#ffffff',
+    borderRadius: '15dp',
+    backgroundColor: '#6FBE51'
+  });
+  var goLabel = Ti.UI.createLabel({
+    text: 'GO',
+    color: '#ffffff',
+    width: '25dp',
+    height: '25dp',
+    font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"}
+  });
+  goButton.add(goLabel);
+  */
+
   // Add Global Event Listeners
   Ti.App.addEventListener('UpdateParkingLots', function (json) {
     // Updates the parking lots on the map
@@ -42,7 +98,6 @@ exports.createMapView = function (win) {
           var coordinates = record.geometry.coordinates[0];
           var points = [];
           for (var j = 0; j < coordinates.length; j++) {
-            console.log("Coordinate: " + j);
             var point = {
               latitude: coordinates[j][1],
               longitude: coordinates[j][0]
@@ -56,29 +111,24 @@ exports.createMapView = function (win) {
             strokeWidth: 1
           });
 
-          //Labels for parking polygons
-          var price = Ti.UI.createLabel({
-            //text : "P",//Number=12 Input from server
-            color: 'black',
-            font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"},
-            height: '30dp',
-            width: '30dp',
-            left: '50%',
-            backgroundImage: '/assets/icons/icons8-parking-50.png'
-          });
-          //Convert labels into images to be used in an annotation
-          var anImageView = Ti.UI.createImageView({
-            image: price.toImage(), //setting label as a blob
-            width: 'auto',
-            height: 'auto'
-          });
-          //Annotaion for parking polygons
+          // Annotation for parking polygons
+          var annotationText = "";
+          if (record.properties.stdParking && record.properties.stdParking > 1) {
+            annotationText += record.properties.stdParking + " spots";
+            if (record.properties.hcParking && record.properties.hcParking > 1) {
+              annotationText += ", " + record.properties.hcParking + " handicap";
+            }
+            if (record.properties.elecParking && record.properties.elecParking > 1) {
+              annotationText += ", " + record.properties.elecParking + " electric";
+            }
+          }
           var pin = Map.createAnnotation({
             latitude: lotCenter[1],
             longitude: lotCenter[0],
             title: record.properties.name,
-            subtitle: "Standard: " + record.properties.stdParking + ", Handicap: " + record.properties.hcParking + ", Electric: " + record.properties.elecParking,
-            image: anImageView.toBlob() //setting ImageView as blob
+            subtitle: annotationText,
+            // rightView: goButton
+            image: parkingImage
           });
           mapView.addAnnotation(pin);
           if (Ti.UI.Android) {
