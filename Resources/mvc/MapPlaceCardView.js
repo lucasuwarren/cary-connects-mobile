@@ -41,6 +41,8 @@ exports.createPlaceCardView = function (win) {
   });
   backgroundView.add(scrollView);
 
+  // Place details
+
   var titleLabel = Ti.UI.createLabel({
     top: '0dp',
     left: '20dp',
@@ -70,6 +72,7 @@ exports.createPlaceCardView = function (win) {
   });
   scrollView.add(buttonView);
 
+  /*
   var findParkingButton = Ti.UI.createButton({
     title: 'Find Parking',
     top: 0,
@@ -85,11 +88,12 @@ exports.createPlaceCardView = function (win) {
   findParkingButton.addEventListener('click', function () {
     alert('find parking?');
   });
+  */
 
   var directionsButton = Ti.UI.createButton({
     title: 'Get Directions',
     top: 0,
-    right: 0,
+    left: 0,
     width: '48%',
     height: '100%',
     color: '#ffffff',
@@ -180,13 +184,12 @@ exports.createPlaceCardView = function (win) {
     // adjust for the handle offset
     top -= 30;
 
-    // Upper max (1/2 screen)
-    if (top < clientHeight / 2) {
-      return;
-    }
-    // Lower max
-    if ((clientHeight - top) < 160) {
-      return;
+    // Determine constraints
+    // @todo work on these...
+    if (top < 300) {
+      top = 300;
+    } else if (top > clientHeight - 160) {
+      top = (clientHeight - 160);
     }
 
     placeCardView.animate({
@@ -232,8 +235,6 @@ exports.createPlaceCardView = function (win) {
       opacity: 1,
       curve: Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT,
       duration: 500
-    }, function () {
-      // console.log('ShowPlaceCard animate finished');
     });
   });
 
@@ -244,8 +245,6 @@ exports.createPlaceCardView = function (win) {
       opacity: 0,
       curve: Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT,
       duration: 500
-    }, function () {
-      // console.log('HidePlaceCard animate finished');
     });
   });
 

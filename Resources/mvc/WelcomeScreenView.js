@@ -8,6 +8,13 @@ exports.createWelcomeScreenView = function (win) {
     clientHeight = Ti.Platform.displayCaps.platformHeight / (Ti.Platform.displayCaps.dpi / 160);
   }
 
+  var infoButton = Ti.UI.createButton({
+    title: 'About'
+  });
+  infoButton.addEventListener('click', function(){
+    Ti.App.fireEvent('ShowWelcomeScreen');
+  });
+
   var welcomeScreenView = Ti.UI.createView({
     top: 0,
     bottom: 0,
@@ -15,8 +22,14 @@ exports.createWelcomeScreenView = function (win) {
     right: 0,
     backgroundColor: '#a051be',
     zIndex: 1,
-    layout: 'vertical'
+    layout: 'vertical',
+    visible: false
   });
+  if (!Ti.App.Properties.hasProperty('welcome.shown')) {
+    welcomeScreenView.visible = true;
+  } else {
+    win.leftNavButton = infoButton;
+  }
   var caryConnectsLogo = Ti.UI.createImageView({
     image: '/assets/icons/DefaultIcon_white_inside.png',
     width: '80%',
@@ -26,13 +39,12 @@ exports.createWelcomeScreenView = function (win) {
   welcomeScreenView.add(caryConnectsLogo);
 
   var welcomeScreenLabel = Ti.UI.createLabel({
-    top:'5%',
+    top: '5%',
     width: '80%',
     height: 'auto',
     color: '#ffffff',
-    font : {
-  		fontSize : 20,
-          },
+    font: {
+    },
     textAlign: 'center',
     text: 'Welcome to the Cary Connects Mobile App! \n We are a community of civic hackers working together to share information about Cary, North Carolina. \n This app aims to help you search for places and find parking for your next visit.',
     verticalAlign: 1
@@ -45,27 +57,26 @@ exports.createWelcomeScreenView = function (win) {
     verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
     top: "5%",
     height: '35dp',
-    width: 'auto',
+    width: '140dp',
     title: 'Continue',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
     color: '#ffffff',
-    backgroundColor: '#a051be',
-    verticalAlign: 2
+    backgroundColor: '#a051be'
   });
-
   welcomeScreenView.add(continueButton);
 
-
-  continueButton.addEventListener('touchstart', function(){
+  continueButton.addEventListener('touchstart', function () {
     continueButton.backgroundColor = '#ffffff';
     continueButton.color = '#a051be';
   });
-  continueButton.addEventListener('endstart', function(){
+  continueButton.addEventListener('endstart', function () {
     continueButton.backgroundColor = '#a051be';
     continueButton.color = '#ffffff';
   });
+
+
 
   continueButton.addEventListener('click', function () {
     Ti.App.fireEvent('CloseWelcomeScreen');
@@ -73,13 +84,22 @@ exports.createWelcomeScreenView = function (win) {
 
   Ti.App.addEventListener('CloseWelcomeScreen', function () {
     welcomeScreenView.animate({
-      left: '100%',
-      right: - clientWidth - 20 + 'dp',
-      //bottom: -clientHeight - 20 + 'dp',
       opacity: 0,
-      curve: Titanium.UI.ANIMATION_CURVE_EASE_IN_OUT,
-      duration: 50
-    })
+      duration: 200
+    }, function() {
+      welcomeScreenView.visible = false;
+      win.leftNavButton = infoButton;
+    });
+    Ti.App.Properties.setBool('welcome.shown', true);
+  });
+
+  Ti.App.addEventListener('ShowWelcomeScreen', function () {
+    win.leftNavButton = null;
+    welcomeScreenView.visible = true;
+    welcomeScreenView.animate({
+      opacity: 1,
+      duration: 200
+    });
   });
   win.add(welcomeScreenView);
   return welcomeScreenView;

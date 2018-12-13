@@ -61,8 +61,7 @@ exports.createMapView = function (win) {
     parkingImage = anImageView.toBlob();
   }
 
-  /*
-  // Create a go button (works on iOS)
+  // Create a go button
   var goButton = Ti.UI.createView({
     width: '50dp',
     height: '50dp',
@@ -76,10 +75,9 @@ exports.createMapView = function (win) {
     color: '#ffffff',
     width: '25dp',
     height: '25dp',
-    font: {fontSize: '15dp', font: "monospace", fontWeight: "bold"}
+    font: {fontSize: '15dp', fontWeight: "bold"}
   });
   goButton.add(goLabel);
-  */
 
   // Add Global Event Listeners
   Ti.App.addEventListener('UpdateParkingLots', function (json) {
@@ -122,14 +120,19 @@ exports.createMapView = function (win) {
               annotationText += ", " + record.properties.elecParking + " electric";
             }
           }
-          var pin = Map.createAnnotation({
+          var annotationArgs = {
             latitude: lotCenter[1],
             longitude: lotCenter[0],
             title: record.properties.name,
             subtitle: annotationText,
-            // rightView: goButton
             image: parkingImage
-          });
+          };
+          if (Ti.UI.iOS) {
+            annotationArgs.rightView = goButton;
+          } else {
+            annotationArgs.rightButton = '/assets/icons/go-button.png';
+          }
+          var pin = Map.createAnnotation(annotationArgs);
           mapView.addAnnotation(pin);
           if (Ti.UI.Android) {
             mapView.addPolygon(polygon);
@@ -144,12 +147,29 @@ exports.createMapView = function (win) {
     }
   });
 
+  mapView.addEventListener('click', function (e) {
+    var source = e.clicksource;
+    if (source !== 'infoWindow' && source !== 'rightPane') {
+      return;
+    }
+    var annotation = e.annotation;
+    if (!annotation) {
+      return;
+    }
+    var latitude = annotation.latitude;
+    var longitude = annotation.longitude;
+    console.log(source + ' lat/long: ' + latitude + ', ' + longitude);
+
+    if (Ti.UI.Android) {
+      Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+    } else {
+      Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
+    }
+  });
+
   Ti.App.addEventListener('ShowMapMarker', function (ev) {
-
     var record = ev.record;
-
     mapView.removeAnnotation(LastAnnotation);
-
     var annotation = Map.createAnnotation({
       latitude: record.latitude,
       longitude: record.longitude,
