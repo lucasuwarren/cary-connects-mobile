@@ -1,3 +1,5 @@
+var MapCommands = require('/mvc/MapCommands');
+
 var template = {
   properties: {
     height: '60dp'
@@ -66,7 +68,7 @@ exports.createListView = function (win, view) {
     bottom: 20 + 'dp',
     templates: {'template': template},
     defaultItemTemplate: 'template',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#92bfd6',
     visible: false
   });
   var listSection = Ti.UI.createListSection({});
@@ -78,14 +80,13 @@ exports.createListView = function (win, view) {
 
     // Find the record
     var itemId = ev.itemId;
-
+    var record = MapCommands.places[itemId];
     Ti.App.fireEvent('HideSearch');
     Ti.App.fireEvent('ShowPlaceCard', {
-      record: {
-        // @todo access the record instead
-        title: itemId,
-        address: '100 Main Street'
-      }
+      record: record
+    });
+    Ti.App.fireEvent('ShowMapMarker', {
+      record: record
     });
   });
 
@@ -94,26 +95,27 @@ exports.createListView = function (win, view) {
     console.log('MapSearchResultsView.UpdateSearchResults() called');
 
     // Determine if results can be shown
-    var text = ev.text;
-    if (text === undefined || text.length === 0) {
+    var records = ev.records;
+    if (records === undefined || records.length === 0) {
       listView.hide();
       return;
     }
 
     // Determine the search results
     var rowData = [];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < records.length; i++) {
+
+      var thisRecord = records[i];
 
       var rowParameters = {
         title: {
-          text: 'Test Place ' + i
+          text: thisRecord.name
         },
         address: {
-          text: '100 Main Street'
+          text: thisRecord.address
         },
         properties: {
-          // @todo use an actual itemId
-          itemId: 'Test Place ' + i,
+          itemId: thisRecord.itemId,
           accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_NONE,
           backgroundColor: '#92bfd6'
         }
