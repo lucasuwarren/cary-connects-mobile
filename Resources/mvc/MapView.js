@@ -119,7 +119,14 @@ exports.createMapView = function (win) {
             if (record.properties.elecParking && record.properties.elecParking > 1) {
               annotationText += ", " + record.properties.elecParking + " electric";
             }
+            if (record.properties.restrictions && record.properties.restrictions != '') {
+              annotationText += " \nRestrictions: " + record.properties.restrictions;
+            }
+            if (record.properties.note && record.properties.note != '') {
+              annotationText += " \nNote: " + record.properties.note;
+            }
           }
+          
           var annotationArgs = {
             latitude: lotCenter[1],
             longitude: lotCenter[0],
