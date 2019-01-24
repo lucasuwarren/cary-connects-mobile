@@ -11,7 +11,7 @@ exports.createWelcomeScreenView = function (win) {
   var infoButton = Ti.UI.createButton({
     title: 'About'
   });
-  infoButton.addEventListener('click', function(){
+  infoButton.addEventListener('click', function () {
     Ti.App.fireEvent('ShowWelcomeScreen');
   });
 
@@ -43,13 +43,10 @@ exports.createWelcomeScreenView = function (win) {
     width: '80%',
     height: 'auto',
     color: '#ffffff',
-    font: {
-    },
     textAlign: 'center',
-    text: 'Welcome to the Cary Connects Mobile App! \n We are a community of civic hackers working together to share information about Cary, North Carolina. \n This app aims to help you search for places and find parking for your next visit.',
+    text: 'Welcome to the Cary Connects Mobile App!\nWe are a community of civic hackers working together to share information about Cary, North Carolina.\n\nThis app aims to help you search for places and find parking for your next visit.',
     verticalAlign: 1
   });
-
   welcomeScreenView.add(welcomeScreenLabel);
 
   var continueButton = Ti.UI.createButton({
@@ -67,6 +64,18 @@ exports.createWelcomeScreenView = function (win) {
   });
   welcomeScreenView.add(continueButton);
 
+  var disclaimerLabel = Ti.UI.createLabel({
+    top: '5%',
+    width: '80%',
+    height: 'auto',
+    color: '#ffffff',
+    font: {},
+    textAlign: 'center',
+    text: 'Disclaimer: Park at your own risk, please observe parking restrictions noted',
+    verticalAlign: 1
+  });
+  welcomeScreenView.add(disclaimerLabel);
+
   continueButton.addEventListener('touchstart', function () {
     continueButton.backgroundColor = '#ffffff';
     continueButton.color = '#a051be';
@@ -77,7 +86,6 @@ exports.createWelcomeScreenView = function (win) {
   });
 
 
-
   continueButton.addEventListener('click', function () {
     Ti.App.fireEvent('CloseWelcomeScreen');
   });
@@ -86,7 +94,7 @@ exports.createWelcomeScreenView = function (win) {
     welcomeScreenView.animate({
       opacity: 0,
       duration: 200
-    }, function() {
+    }, function () {
       welcomeScreenView.visible = false;
       win.leftNavButton = infoButton;
     });
