@@ -25,11 +25,7 @@ exports.createfeedbackScreenView = function (win) {
     layout: 'vertical',
     visible: false
   });
-  if (!Ti.App.Properties.hasProperty('feedback.shown')) {
-    feedbackScreenView.visible = true;
-  } else {
-    win.leftNavButton = infoButton;
-  }
+  win.rightNavButton = infoButton;
   var caryConnectsLogo = Ti.UI.createImageView({
     image: '/assets/icons/DefaultIcon_white_inside.png',
     width: '80%',
@@ -53,11 +49,14 @@ exports.createfeedbackScreenView = function (win) {
 
   feedbackScreenView.add(feedbackScreenLabel);
 
-  var feedbackScreenTextbox = Ti.UI.createTextarea({
+  var feedbackScreenTextbox = Ti.UI.createTextArea({
     width: '80%',
     top: '15%',
     height: 'auto',
-    color:  '#ffffff',
+    color:  '#000000',
+    hintTextColor:  '#666666',
+    backgroundColor: '#ffffff',
+    hintText: 'Your comments',
     verticalAlign:  1
 
   });
@@ -100,13 +99,13 @@ exports.createfeedbackScreenView = function (win) {
       duration: 200
     }, function() {
       feedbackScreenView.visible = false;
-      win.leftNavButton = infoButton;
+      win.rightNavButton = infoButton;
     });
     Ti.App.Properties.setBool('feedback.shown', true);
   });
 
-  Ti.App.addEventListener('FeedbackScreen', function () {
-    win.leftNavButton = null;
+  Ti.App.addEventListener('ShowFeedbackScreen', function () {
+    win.rightNavButton = null;
     feedbackScreenView.visible = true;
     feedbackScreenView.animate({
       opacity: 1,

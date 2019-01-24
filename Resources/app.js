@@ -24,6 +24,26 @@ if (Ti.UI.Android) {
           Ti.API.info("Home icon clicked!");
         };
       }
+
+      win.activity.onCreateOptionsMenu = function(e){
+        var menu = e.menu;
+        var menuItem = menu.add({
+          title: "About",
+          showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
+        });
+        menuItem.addEventListener("click", function(e) {
+          Ti.App.fireEvent('ShowWelcomeScreen');
+        });
+
+        var menuItem2 = menu.add({
+          title: "Comments",
+          showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
+        });
+        menuItem2.addEventListener("click", function(e) {
+          Ti.App.fireEvent('ShowFeedbackScreen');
+        });
+      };
+
     }
   });
   win.open();
