@@ -10,12 +10,14 @@ var win = MapController.createWindow({
   fullscreen: false
 });
 
+// Android specific window features
 if (Ti.UI.Android) {
   var actionBar;
   win.addEventListener("open", function () {
     if (!win.activity) {
       Ti.API.error("Can't access action bar on a lightweight window.");
     } else {
+      // Configures the android menu bar colors and options
       actionBar = win.activity.actionBar;
       if (actionBar) {
         actionBar.backgroundImage = '/assets/images/window-title-background.png';
@@ -24,7 +26,7 @@ if (Ti.UI.Android) {
           Ti.API.info("Home icon clicked!");
         };
       }
-
+      // Creates the Android menu and menu items
       win.activity.onCreateOptionsMenu = function(e){
         var menu = e.menu;
         var menuItem = menu.add({
