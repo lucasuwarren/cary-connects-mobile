@@ -1,6 +1,7 @@
 var Map = require('ti.map');
 var LastAnnotation = {};
 var strRestNoteAntText = "";
+var entryGeoPoint;
 
 exports.createMapView = function (win) {
 
@@ -90,8 +91,9 @@ exports.createMapView = function (win) {
       for (var i = 0; i < json.features.length; i++) {
         console.log("Feature " + i);
         var record = json.features[i];
-        console.log("lotCentre: " + record.properties.lotcenter);
+        //console.log("lotCentre: " + record.properties.lotcenter);
         var lotCenter = record.properties.lotcenter.split(',');
+        entryGeoPoint = record.properties.entrance1.split(',');
         //console.log("name: " + record.properties.name);
         if (record.geometry && record.geometry.coordinates) {
           var coordinates = record.geometry.coordinates[0];
@@ -178,7 +180,8 @@ exports.createMapView = function (win) {
     console.log(source + ' lat/long: ' + latitude + ', ' + longitude);
     
     if (Ti.UI.Android) { //Open maps
-      Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+      //Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+      Ti.Platform.openURL("http://maps.google.com/?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
     } else { //Create an OptionDialog to display restrictions & notes for iOS
       //Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
       var opts = {
