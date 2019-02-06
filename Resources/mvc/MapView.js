@@ -1,5 +1,7 @@
 var Map = require('ti.map');
 var LastAnnotation = {};
+var strRestNoteAntText = "";
+var entryGeoPoint;
 
 exports.createMapView = function (win) {
 
@@ -89,8 +91,9 @@ exports.createMapView = function (win) {
       for (var i = 0; i < json.features.length; i++) {
         console.log("Feature " + i);
         var record = json.features[i];
-        console.log("lotCentre: " + record.properties.lotcenter);
+        //console.log("lotCentre: " + record.properties.lotcenter);
         var lotCenter = record.properties.lotcenter.split(',');
+        entryGeoPoint = record.properties.entrance1.split(',');
         //console.log("name: " + record.properties.name);
         if (record.geometry && record.geometry.coordinates) {
           var coordinates = record.geometry.coordinates[0];
@@ -119,12 +122,20 @@ exports.createMapView = function (win) {
             if (record.properties.elecParking && record.properties.elecParking > 1) {
               annotationText += ", " + record.properties.elecParking + " electric";
             }
-            if (record.properties.restrictions && record.properties.restrictions != '') {
-              annotationText += " \nRestrictions: " + record.properties.restrictions;
-            }
-            if (record.properties.note && record.properties.note != '') {
-              annotationText += " \nNote: " + record.properties.note;
-            }
+          }
+
+          //Append any Restriction(s) or note(s) to an annotation
+          if (record.properties.restrictions && record.properties.restrictions != '') {
+            strRestNoteAntText = " \nRestrictions: " + wordWrap(record.properties.restrictions, 30);
+          }
+          if (record.properties.note && record.properties.note != '') {
+            strRestNoteAntText += " \nNote: " + wordWrap(record.properties.note, 30);
+          }
+          //For Android only, show in the rightPane. Will show in an OptionDialog for iOS later
+          if (Ti.UI.Android){
+            annotationText += strRestNoteAntText;
+          } else {
+            strRestNoteAntText += "Please note: " + strRestNoteAntText;
           }
           
           var annotationArgs = {
@@ -156,6 +167,7 @@ exports.createMapView = function (win) {
 
   mapView.addEventListener('click', function (e) {
     var source = e.clicksource;
+    console.log(source);
     if (source !== 'infoWindow' && source !== 'rightPane') {
       return;
     }
@@ -166,11 +178,31 @@ exports.createMapView = function (win) {
     var latitude = annotation.latitude;
     var longitude = annotation.longitude;
     console.log(source + ' lat/long: ' + latitude + ', ' + longitude);
+    
+    if (Ti.UI.Android) { //Open maps
+      //Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+      Ti.Platform.openURL("http://maps.google.com/?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
+    } else { //Create an OptionDialog to display restrictions & notes for iOS
+      //Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
+      var opts = {
+        cancel: 2,
+        options: ['Continue', 'Cancel'],
+        selectedIndex: 2,
+        destructive: 0,
+        title: strRestNoteAntText
+      };
+      var dialog = Ti.UI.createOptionDialog(opts);
+      dialog.addEventListener('click', onSelectDialog);
+      dialog.show();
+    }
 
-    if (Ti.UI.Android) {
-      Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
-    } else {
-      Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
+    //Helper function for handling OptionDialog selections
+    function onSelectDialog(e) {
+      if (Ti.UI.Android) {
+        if (e.button === false && e.index === 0) {
+          Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+        }
+      }
     }
   });
 
@@ -198,5 +230,35 @@ exports.createMapView = function (win) {
     });
   });
 
+  //Helper Function: Inserts a line break at the nearest whitespace of maxWidth 
+  function wordWrap(str, maxWidth) {
+    function testWhite(x) {
+      var white = new RegExp(/^\s$/);
+      return white.test(x.charAt(0));
+    }
+    var newLineStr = "\n"; done = false; res = '';
+    do {                    
+        found = false;
+        // Inserts new line at first whitespace of the line
+        for (i = maxWidth - 1; i >= 0; i--) {
+            if (testWhite(str.charAt(i))) {
+                res = res + [str.slice(0, i), newLineStr].join('');
+                str = str.slice(i + 1);
+                found = true;
+                break;
+            }
+        }
+        // Inserts new line at maxWidth position, the word is too long to wrap
+        if (!found) {
+            res += [str.slice(0, maxWidth), newLineStr].join('');
+            str = str.slice(maxWidth);
+        }
+
+        if (str.length < maxWidth)
+            done = true;
+    } while (!done);
+
+    return res + str;
+  }
   return mapView;
 };
