@@ -1,7 +1,5 @@
 var Map = require('ti.map');
 var LastAnnotation = {};
-var strRestNoteAntText = "";
-var entryGeoPoint;
 
 exports.createMapView = function (win) {
 
@@ -93,7 +91,6 @@ exports.createMapView = function (win) {
         var record = json.features[i];
         //console.log("lotCentre: " + record.properties.lotcenter);
         var lotCenter = record.properties.lotcenter.split(',');
-        entryGeoPoint = record.properties.entrance1.split(',');
         //console.log("name: " + record.properties.name);
         if (record.geometry && record.geometry.coordinates) {
           var coordinates = record.geometry.coordinates[0];
@@ -125,25 +122,26 @@ exports.createMapView = function (win) {
           }
 
           //Append any Restriction(s) or note(s) to an annotation
+          var strRestNoteAntText = "";
           if (record.properties.restrictions && record.properties.restrictions != '') {
-            strRestNoteAntText = " \nRestrictions: " + wordWrap(record.properties.restrictions, 30);
+            strRestNoteAntText = "\nRestrictions: " + record.properties.restrictions;
           }
           if (record.properties.note && record.properties.note != '') {
-            strRestNoteAntText += " \nNote: " + wordWrap(record.properties.note, 30);
+            strRestNoteAntText += "\nNote: " + record.properties.note;
           }
           //For Android only, show in the rightPane. Will show in an OptionDialog for iOS later
-          if (Ti.UI.Android){
+          if (Ti.UI.Android) {
             annotationText += strRestNoteAntText;
-          } else {
-            strRestNoteAntText += "Please note: " + strRestNoteAntText;
           }
-          
+
           var annotationArgs = {
             latitude: lotCenter[1],
             longitude: lotCenter[0],
             title: record.properties.name,
             subtitle: annotationText,
-            image: parkingImage
+            image: parkingImage,
+            record: record,
+            strRestNoteAntText: strRestNoteAntText
           };
           if (Ti.UI.iOS) {
             annotationArgs.rightView = goButton;
@@ -177,31 +175,31 @@ exports.createMapView = function (win) {
     }
     var latitude = annotation.latitude;
     var longitude = annotation.longitude;
+    var record = annotation.record;
     console.log(source + ' lat/long: ' + latitude + ', ' + longitude);
-    
+
+    var entryGeoPoint = record.properties.entrance1.split(',');
+    var strRestNoteAntText = annotation.strRestNoteAntText;
+
     if (Ti.UI.Android) { //Open maps
-      //Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
       Ti.Platform.openURL("http://maps.google.com/?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
     } else { //Create an OptionDialog to display restrictions & notes for iOS
-      //Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
       var opts = {
-        cancel: 2,
-        options: ['Continue', 'Cancel'],
-        selectedIndex: 2,
-        destructive: 0,
-        title: strRestNoteAntText
+        title: 'Please Note',
+        cancel: 1,
+        buttonNames: ['Continue', 'Cancel'],
+        message: strRestNoteAntText
       };
-      var dialog = Ti.UI.createOptionDialog(opts);
+      var dialog = Ti.UI.createAlertDialog(opts);
       dialog.addEventListener('click', onSelectDialog);
       dialog.show();
-    }
 
-    //Helper function for handling OptionDialog selections
-    function onSelectDialog(e) {
-      if (Ti.UI.Android) {
-        if (e.button === false && e.index === 0) {
-          Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
+      //Helper function for handling OptionDialog selections
+      function onSelectDialog(e) {
+        if (e.index === e.source.cancel) {
+          return;
         }
+        Ti.Platform.openURL("maps://?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
       }
     }
   });
@@ -230,35 +228,5 @@ exports.createMapView = function (win) {
     });
   });
 
-  //Helper Function: Inserts a line break at the nearest whitespace of maxWidth 
-  function wordWrap(str, maxWidth) {
-    function testWhite(x) {
-      var white = new RegExp(/^\s$/);
-      return white.test(x.charAt(0));
-    }
-    var newLineStr = "\n"; done = false; res = '';
-    do {                    
-        found = false;
-        // Inserts new line at first whitespace of the line
-        for (i = maxWidth - 1; i >= 0; i--) {
-            if (testWhite(str.charAt(i))) {
-                res = res + [str.slice(0, i), newLineStr].join('');
-                str = str.slice(i + 1);
-                found = true;
-                break;
-            }
-        }
-        // Inserts new line at maxWidth position, the word is too long to wrap
-        if (!found) {
-            res += [str.slice(0, maxWidth), newLineStr].join('');
-            str = str.slice(maxWidth);
-        }
-
-        if (str.length < maxWidth)
-            done = true;
-    } while (!done);
-
-    return res + str;
-  }
   return mapView;
 };
