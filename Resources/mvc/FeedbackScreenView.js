@@ -26,32 +26,19 @@ exports.createfeedbackScreenView = function (win) {
     visible: false
   });
   win.rightNavButton = infoButton;
+
   var caryConnectsLogo = Ti.UI.createImageView({
     image: '/assets/icons/DefaultIcon_white_inside.png',
     width: '80%',
-    height: 220
+    height: '100dp'
   });
 
   feedbackScreenView.add(caryConnectsLogo);
 
-  var feedbackScreenLabel = Ti.UI.createLabel({
-    top: '5%',
-    width: '80%',
-    height: 'auto',
-    color: '#ffffff',
-    font: {
-    },
-    textAlign: 'center',
-    text: 'Welcome to the Cary Connects Mobile App! \n Please let us know what you think about the app.',
-    verticalAlign: 1
-  });
-
-
-  feedbackScreenView.add(feedbackScreenLabel);
 
   var feedbackScreenTextbox = Ti.UI.createTextArea({
     width: '80%',
-    top: '15%',
+    top: '5%',
     height: 'auto',
     color:  '#000000',
     hintTextColor:  '#666666',
@@ -62,13 +49,15 @@ exports.createfeedbackScreenView = function (win) {
   });
   feedbackScreenView.add(feedbackScreenTextbox);
 
+
+
   var continueButton = Ti.UI.createButton({
     textAlign: textAlign,
     verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
     top: "5%",
     height: '35dp',
     width: '140dp',
-    title: 'Leave Feedback',
+    title: 'Close',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
@@ -76,6 +65,8 @@ exports.createfeedbackScreenView = function (win) {
     backgroundColor: '#a051be'
   });
   feedbackScreenView.add(continueButton);
+
+
 
   continueButton.addEventListener('touchstart', function () {
     continueButton.backgroundColor = '#ffffff';
@@ -86,7 +77,19 @@ exports.createfeedbackScreenView = function (win) {
     continueButton.color = '#ffffff';
   });
 
+  var feedbackScreenLabel = Ti.UI.createLabel({
+    top: '5%',
+    width: '80%',
+    height: 'auto',
+    color: '#ffffff',
+    font: {
+    },
+    textAlign: 'center',
+    text: 'Thank you for your comments on the app.',
+    verticalAlign: 1
+  });
 
+  feedbackScreenView.add(feedbackScreenLabel);
 
   continueButton.addEventListener('click', function () {
     Ti.App.fireEvent('CloseFeedbackScreen');
@@ -94,6 +97,9 @@ exports.createfeedbackScreenView = function (win) {
 
   Ti.App.addEventListener('CloseFeedbackScreen', function () {
     //needs code to save feedback
+    if (feedbackScreenTextbox.value){
+      //try blur
+    }
     feedbackScreenView.animate({
       opacity: 0,
       duration: 200
