@@ -57,12 +57,11 @@ exports.createfeedbackScreenView = function (win) {
     top: "5%",
     height: '35dp',
     width: '140dp',
-    title: 'Close',
+    title: 'Return to Map',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
     color: '#ffffff',
-    softKeyboardOnFocus: '0',
     backgroundColor: '#a051be'
 
   });
@@ -100,9 +99,10 @@ exports.createfeedbackScreenView = function (win) {
 
   Ti.App.addEventListener('CloseFeedbackScreen', function () {
     //needs code to save feedback
+    Ti.UI.Android.hideSoftKeyboard();
     if (feedbackScreenTextbox.hasText()){
-      var url = "http://cary-dtcparking.herokuapp.com/api/send/";
-      var client = Ti.Network.createHTTPClient({
+    var url = "http://cary-dtcparking.herokuapp.com/api/send/";
+    var client = Ti.Network.createHTTPClient({
      // function called when the response data is available
      onload : function(e) {
          Ti.API.info("Received text: " + this.responseText);
@@ -133,6 +133,7 @@ exports.createfeedbackScreenView = function (win) {
   Ti.App.addEventListener('ShowFeedbackScreen', function () {
     win.rightNavButton = null;
     feedbackScreenView.visible = true;
+    feedbackScreenTextbox.value = "";
     feedbackScreenView.animate({
       opacity: 1,
       duration: 200
