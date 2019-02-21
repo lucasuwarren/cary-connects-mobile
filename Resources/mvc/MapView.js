@@ -102,12 +102,25 @@ exports.createMapView = function (win) {
             };
             points.push(point);
           }
+          var color = 'Blue';
+          if (record.properties.category == "private"){
+            color = 'Orange';
+          }
+          if (record.properties.category == "restricted"){
+            color = 'Red';
+          }
+          if (record.properties.category == "public"){
+            color = "Green";
+          }
           var polygon = Map.createPolygon({
             points: points,
-            strokeColor: '#50000000',
-            fillColor: '#500090BB',
+            strokeColor: color,
+            fillColor: color,
             strokeWidth: 1
+
           });
+
+
 
           // Annotation for parking polygons
           var annotationText = "";
@@ -126,7 +139,7 @@ exports.createMapView = function (win) {
               annotationText += " \nNote: " + record.properties.note;
             }
           }
-          
+
           var annotationArgs = {
             latitude: lotCenter[1],
             longitude: lotCenter[0],
