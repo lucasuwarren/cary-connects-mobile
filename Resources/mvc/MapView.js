@@ -104,8 +104,10 @@ exports.createMapView = function (win) {
           }
           var polygon = Map.createPolygon({
             points: points,
-            strokeColor: '#50000000',
-            fillColor: '#500090BB',
+            //strokeColor: '#50000000',
+            //fillColor: '#500090BB',
+            strokeColor: record.properties.stroke,
+            fillColor: record.properties.fill,
             strokeWidth: 1
           });
 
