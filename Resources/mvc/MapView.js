@@ -89,7 +89,7 @@ exports.createMapView = function (win) {
       for (var i = 0; i < json.features.length; i++) {
         console.log("Feature " + i);
         var record = json.features[i];
-        console.log("lotCentre: " + record.properties.lotcenter);
+        //console.log("lotCentre: " + record.properties.lotcenter);
         var lotCenter = record.properties.lotcenter.split(',');
         //console.log("name: " + record.properties.name);
         if (record.geometry && record.geometry.coordinates) {
@@ -102,25 +102,14 @@ exports.createMapView = function (win) {
             };
             points.push(point);
           }
-          var color = 'Blue';
-          if (record.properties.category == "private"){
-            color = 'Orange';
-          }
-          if (record.properties.category == "restricted"){
-            color = 'Red';
-          }
-          if (record.properties.category == "public"){
-            color = "Green";
-          }
           var polygon = Map.createPolygon({
             points: points,
-            strokeColor: color,
-            fillColor: color,
+            //strokeColor: '#50000000',
+            //fillColor: '#500090BB',
+            strokeColor: record.properties.stroke,
+            fillColor: record.properties.fill,
             strokeWidth: 1
-
           });
-
-
 
           // Annotation for parking polygons
           var annotationText = "";
@@ -132,12 +121,19 @@ exports.createMapView = function (win) {
             if (record.properties.elecParking && record.properties.elecParking > 1) {
               annotationText += ", " + record.properties.elecParking + " electric";
             }
-            if (record.properties.restrictions && record.properties.restrictions != '') {
-              annotationText += " \nRestrictions: " + record.properties.restrictions;
-            }
-            if (record.properties.note && record.properties.note != '') {
-              annotationText += " \nNote: " + record.properties.note;
-            }
+          }
+
+          //Append any Restriction(s) or note(s) to an annotation
+          var strRestNoteAntText = "";
+          if (record.properties.restrictions && record.properties.restrictions != '') {
+            strRestNoteAntText = "\nRestrictions: " + record.properties.restrictions;
+          }
+          if (record.properties.note && record.properties.note != '') {
+            strRestNoteAntText += "\nNote: " + record.properties.note;
+          }
+          //For Android only, show in the rightPane. Will show in an OptionDialog for iOS later
+          if (Ti.UI.Android) {
+            annotationText += strRestNoteAntText;
           }
 
           var annotationArgs = {
@@ -145,7 +141,9 @@ exports.createMapView = function (win) {
             longitude: lotCenter[0],
             title: record.properties.name,
             subtitle: annotationText,
-            image: parkingImage
+            image: parkingImage,
+            record: record,
+            strRestNoteAntText: strRestNoteAntText
           };
           if (Ti.UI.iOS) {
             annotationArgs.rightView = goButton;
@@ -153,15 +151,17 @@ exports.createMapView = function (win) {
             annotationArgs.rightButton = '/assets/icons/go-button.png';
           }
           var pin = Map.createAnnotation(annotationArgs);
+          if (record.properties.active=='true'){
           mapView.addAnnotation(pin);
-          if (Ti.UI.Android) {
+          }
+          if (Ti.UI.Android && record.properties.active=='true') {
             mapView.addPolygon(polygon);
           } else {
             polygonData.push(polygon);
           }
         }
       }
-      if (!Ti.UI.Android) {
+      if (!Ti.UI.Android && record.properties.active=='true') {
         mapView.addPolygons(polygonData);
       }
     }
@@ -169,6 +169,7 @@ exports.createMapView = function (win) {
 
   mapView.addEventListener('click', function (e) {
     var source = e.clicksource;
+    console.log(source);
     if (source !== 'infoWindow' && source !== 'rightPane') {
       return;
     }
@@ -178,12 +179,32 @@ exports.createMapView = function (win) {
     }
     var latitude = annotation.latitude;
     var longitude = annotation.longitude;
+    var record = annotation.record;
     console.log(source + ' lat/long: ' + latitude + ', ' + longitude);
 
-    if (Ti.UI.Android) {
-      Ti.Platform.openURL("http://maps.google.com/?daddr=" + latitude + "," + longitude);
-    } else {
-      Ti.Platform.openURL("maps://?daddr=" + latitude + "," + longitude);
+    var entryGeoPoint = record.properties.entrance1.split(',');
+    var strRestNoteAntText = annotation.strRestNoteAntText;
+
+    if (Ti.UI.Android) { //Open maps
+      Ti.Platform.openURL("http://maps.google.com/?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
+    } else { //Create an OptionDialog to display restrictions & notes for iOS
+      var opts = {
+        title: 'Please Note',
+        cancel: 1,
+        buttonNames: ['Continue', 'Cancel'],
+        message: strRestNoteAntText
+      };
+      var dialog = Ti.UI.createAlertDialog(opts);
+      dialog.addEventListener('click', onSelectDialog);
+      dialog.show();
+
+      //Helper function for handling OptionDialog selections
+      function onSelectDialog(e) {
+        if (e.index === e.source.cancel) {
+          return;
+        }
+        Ti.Platform.openURL("maps://?daddr=" + entryGeoPoint[1] + "," + entryGeoPoint[0]);
+      }
     }
   });
 
