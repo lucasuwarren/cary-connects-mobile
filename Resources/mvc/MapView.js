@@ -89,6 +89,10 @@ exports.createMapView = function (win) {
       for (var i = 0; i < json.features.length; i++) {
         console.log("Feature " + i);
         var record = json.features[i];
+        // If the lot is not active, skip it
+        if (record.properties.active !== undefined && record.properties.active === 'false') {
+          continue;
+        }
         //console.log("lotCentre: " + record.properties.lotcenter);
         var lotCenter = record.properties.lotcenter.split(',');
         //console.log("name: " + record.properties.name);
@@ -151,17 +155,16 @@ exports.createMapView = function (win) {
             annotationArgs.rightButton = '/assets/icons/go-button.png';
           }
           var pin = Map.createAnnotation(annotationArgs);
-          if (record.properties.active=='true'){
           mapView.addAnnotation(pin);
-          }
-          if (Ti.UI.Android && record.properties.active=='true') {
+          if (Ti.UI.Android) {
             mapView.addPolygon(polygon);
           } else {
             polygonData.push(polygon);
           }
         }
       }
-      if (!Ti.UI.Android && record.properties.active=='true') {
+      // After adding polygons to the array, iOS can batch display them
+      if (!Ti.UI.Android) {
         mapView.addPolygons(polygonData);
       }
     }
