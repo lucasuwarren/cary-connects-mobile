@@ -49,6 +49,7 @@
 		</plist>
 	</ios>
 	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<!-- map key -->
 	</android>
 	<modules>
 		<module platform="iphone">ti.map</module>
@@ -59,5 +60,5 @@
 		<target device="ipad">true</target>
 		<target device="iphone">true</target>
 	</deployment-targets>
-	<sdk-version>7.4.0.GA</sdk-version>
+	<sdk-version>7.5.2.GA</sdk-version>
 </ti:app>
