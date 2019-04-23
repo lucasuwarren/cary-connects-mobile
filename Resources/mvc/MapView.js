@@ -151,15 +151,17 @@ exports.createMapView = function (win) {
             annotationArgs.rightButton = '/assets/icons/go-button.png';
           }
           var pin = Map.createAnnotation(annotationArgs);
+          if (record.properties.active=='true'){
           mapView.addAnnotation(pin);
-          if (Ti.UI.Android) {
+          }
+          if (Ti.UI.Android && record.properties.active=='true') {
             mapView.addPolygon(polygon);
           } else {
             polygonData.push(polygon);
           }
         }
       }
-      if (!Ti.UI.Android) {
+      if (!Ti.UI.Android && record.properties.active=='true') {
         mapView.addPolygons(polygonData);
       }
     }

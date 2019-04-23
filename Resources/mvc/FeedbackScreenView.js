@@ -30,7 +30,7 @@ exports.createfeedbackScreenView = function (win) {
   var caryConnectsLogo = Ti.UI.createImageView({
     image: '/assets/icons/DefaultIcon_white_inside.png',
     width: '80%',
-    height: '100dp'
+    height: '110dp'
   });
 
   feedbackScreenView.add(caryConnectsLogo);
@@ -57,12 +57,13 @@ exports.createfeedbackScreenView = function (win) {
     top: "5%",
     height: '35dp',
     width: '140dp',
-    title: 'Close',
+    title: 'Return to Map',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
     color: '#ffffff',
     backgroundColor: '#a051be'
+
   });
   feedbackScreenView.add(continueButton);
 
@@ -93,12 +94,31 @@ exports.createfeedbackScreenView = function (win) {
 
   continueButton.addEventListener('click', function () {
     Ti.App.fireEvent('CloseFeedbackScreen');
+
   });
 
   Ti.App.addEventListener('CloseFeedbackScreen', function () {
     //needs code to save feedback
-    if (feedbackScreenTextbox.value){
-      //try blur
+    Ti.UI.Android.hideSoftKeyboard();
+    if (feedbackScreenTextbox.hasText()){
+    var url = "http://cary-dtcparking.herokuapp.com/api/send/";
+    var client = Ti.Network.createHTTPClient({
+     // function called when the response data is available
+     onload : function(e) {
+         Ti.API.info("Received text: " + this.responseText);
+         alert('success');
+     },
+     // function called when an error occurs, including a timeout
+     onerror : function(e) {
+         Ti.API.debug(e.error);
+         alert('error'+e.error);
+     },
+     timeout : 5000  // in milliseconds
+ });
+ // Prepare the connection.
+ client.open("POST", url);
+ // Send the request.
+ client.send("message="+feedbackScreenTextbox.value);
     }
     feedbackScreenView.animate({
       opacity: 0,
@@ -113,6 +133,7 @@ exports.createfeedbackScreenView = function (win) {
   Ti.App.addEventListener('ShowFeedbackScreen', function () {
     win.rightNavButton = null;
     feedbackScreenView.visible = true;
+    feedbackScreenTextbox.value = "";
     feedbackScreenView.animate({
       opacity: 1,
       duration: 200
