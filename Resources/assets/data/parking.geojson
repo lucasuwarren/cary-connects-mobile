@@ -3,44 +3,51 @@
   "features": [
     {
       "type": "Feature",
-      "ID": 1,
-      "name": "Methodist Church",
-      "properties": {},
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Cary Arts Center",
+        "stdParking": 16,
+        "hcParking": 4,
+        "elecParking": 4,
+        "restrictions": "Observe Posted Restrictions",
+        "note": "",
+        "entrance1": "-78.781858, 35.782396",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.781746, 35.782705",
+        "active": "true",
+        "category": "public"
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -78.77872914075851,
-              35.78571086387208
+              -78.78193974494933,
+              35.78236000902169
             ],
             [
-              -78.77870500087738,
-              35.78631139176287
+              -78.78165006637573,
+              35.78236218494728
             ],
             [
-              -78.77900809049606,
-              35.78654637970242
+              -78.7816447019577,
+              35.78290181265832
             ],
             [
-              -78.78003537654877,
-              35.7865289732122
+              -78.78193438053131,
+              35.78290616447979
             ],
             [
-              -78.78005415201187,
-              35.78618084260735
-            ],
-            [
-              -78.77975642681122,
-              35.78617649096513
-            ],
-            [
-              -78.77976179122925,
-              35.78572827054148
-            ],
-            [
-              -78.77872914075851,
-              35.78571086387208
+              -78.78193974494933,
+              35.78236000902169
             ]
           ]
         ]
@@ -48,60 +55,2146 @@
     },
     {
       "type": "Feature",
-      "ID": 2,
-      "name": "Cary Elementary",
-      "properties": {},
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#005700",
+        "fill-opacity": 0.5,
+        "name": "Faculty Ave Street",
+        "stdParking": 13,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions",
+        "entrance1": "-78.782016, 35.782240 ",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.782194, 35.782063",
+        "active": "true",
+        "category": "public",
+        "note": ""
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -78.78191024065018,
-              35.781243751334
+              -78.7819853425026,
+              35.7822403330217
+            ],
+            [
+              -78.78200680017471,
+              35.7822403330217
+            ],
+            [
+              -78.78202557563782,
+              35.7822185737296
+            ],
+            [
+              -78.78204971551895,
+              35.78219246257125
+            ],
+            [
+              -78.78210872411728,
+              35.782142416160426
+            ],
+            [
+              -78.78250300884245,
+              35.781855192671586
+            ],
+            [
+              -78.78248691558838,
+              35.78183343327407
+            ],
+            [
+              -78.7820953130722,
+              35.782118480909325
+            ],
+            [
+              -78.7820416688919,
+              35.7821663514043
+            ],
+            [
+              -78.7820041179657,
+              35.78219899036166
+            ],
+            [
+              -78.78199070692062,
+              35.78220769408134
+            ],
+            [
+              -78.7819853425026,
+              35.7822403330217
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Library",
+        "stdParking": 45,
+        "hcParking": 5,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions",
+        "entrance1": "-78.781331, 35.784617",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.782146, 35.784191",
+        "active": "true",
+        "category": "restricted",
+        "note": ""
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78192365169525,
+              35.784033278223916
+            ],
+            [
+              -78.78193974494933,
+              35.78422910716764
             ],
             [
               -78.78190755844116,
-              35.781811673870635
+              35.7843901217155
             ],
             [
-              -78.7819504737854,
-              35.781970517378916
+              -78.78227233886719,
+              35.78439447345552
             ],
             [
-              -78.78223478794098,
-              35.78194658207606
+              -78.78228306770325,
+              35.78427697639161
             ],
             [
-              -78.78237694501877,
-              35.781857368611
+              -78.78247618675232,
+              35.78427697639161
             ],
             [
-              -78.78251910209656,
-              35.7817768588127
+              -78.78247618675232,
+              35.784124665124374
             ],
             [
-              -78.78257542848587,
-              35.78172028431105
+              -78.78228843212128,
+              35.784133368633206
             ],
             [
-              -78.78263175487518,
-              35.78157449598664
+              -78.78228843212128,
+              35.78404633350185
             ],
             [
-              -78.78265589475632,
-              35.78145046690316
+              -78.78192365169525,
+              35.784033278223916
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff40ff",
+        "fill-opacity": 0.5,
+        "name": "Cary Elementary",
+        "stdParking": 97,
+        "hcParking": 5,
+        "elecParking": 0,
+        "restrictions": "Parking allowed after School M-F",
+        "entrance1": "-78.782568, 35.781729",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.782229, 35.781528",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.7820792198181,
+              35.782083665985766
             ],
             [
-              -78.78265589475632,
-              35.78134819716246
+              -78.78246009349823,
+              35.78181384981124
             ],
             [
-              -78.78265857696533,
-              35.781252455158295
+              -78.78262102603912,
+              35.78176597910396
             ],
             [
-              -78.78191024065018,
-              35.781243751334
+              -78.78264784812927,
+              35.781282918535766
+            ],
+            [
+              -78.78193974494933,
+              35.781269862803974
+            ],
+            [
+              -78.78196120262146,
+              35.78197922112361
+            ],
+            [
+              -78.7820792198181,
+              35.782083665985766
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff40ff",
+        "fill-opacity": 0.5,
+        "name": "Methodist Church",
+        "stdParking": 214,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Restricted during Church hours, We & Su",
+        "entrance1": "-78.778684, 35.785795",
+        "e1act": "true",
+        "entrance2": "-78.779628, 35.786523",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.779279, 35.786133",
+        "active": "false",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77866208553314,
+              35.78656161037824
+            ],
+            [
+              -78.77995491027832,
+              35.78654420389135
+            ],
+            [
+              -78.77997100353241,
+              35.78614385364098
+            ],
+            [
+              -78.77957940101624,
+              35.78616126021553
+            ],
+            [
+              -78.77959549427032,
+              35.7857391497079
+            ],
+            [
+              -78.7786728143692,
+              35.785743501374036
+            ],
+            [
+              -78.77866208553314,
+              35.78656161037824
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff40ff",
+        "fill-opacity": 0.5,
+        "name": "Johnsons Jewelers",
+        "stdParking": 19,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "4 spots reserved 9a-6p, Observe Posted Restrictions",
+        "e1act": "true",
+        "note": "",
+        "entrance1": "-78.780108, 35.787320",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.779942, 35.787020",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78005146980286,
+              35.78713384651186
+            ],
+            [
+              -78.78005415201187,
+              35.78700547450573
+            ],
+            [
+              -78.77979397773743,
+              35.78700765030416
+            ],
+            [
+              -78.7797886133194,
+              35.78713819810163
+            ],
+            [
+              -78.78005146980286,
+              35.78713384651186
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff40ff",
+        "fill-opacity": 0.5,
+        "name": "Waldo Street",
+        "stdParking": 33,
+        "hcParking": 2,
+        "elecParking": 0,
+        "restrictions": "Reverse Parking on this One-Way Street",
+        "note": "Reverse Parking Required",
+        "entrance1": "-78.781078, 35.786592",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780062, 35.786600",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.781159222126,
+              35.78659424753087
+            ],
+            [
+              -78.77867013216019,
+              35.78660077495979
+            ],
+            [
+              -78.77867013216019,
+              35.786633412096336
+            ],
+            [
+              -78.781159222126,
+              35.7866290604789
+            ],
+            [
+              -78.781159222126,
+              35.78659424753087
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Railroad",
+        "stdParking": 30,
+        "hcParking": 4,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions, if any",
+        "note": "",
+        "entrance1": "-78.781086, 35.788293",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780681, 35.788303",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78106534481049,
+              35.78825437301576
+            ],
+            [
+              -78.78040015697479,
+              35.78826307607242
+            ],
+            [
+              -78.78041088581085,
+              35.788406676369554
+            ],
+            [
+              -78.7810868024826,
+              35.788402324849216
+            ],
+            [
+              -78.78106534481049,
+              35.78825437301576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Ambassador Loop",
+        "stdParking": 15,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions, if any",
+        "entrance1": "-78.780738, 35.788625",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780467, 35.788552",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78073811531067,
+              35.78860902180241
+            ],
+            [
+              -78.7807434797287,
+              35.788580736987925
+            ],
+            [
+              -78.78010511398314,
+              35.788552452163394
+            ],
+            [
+              -78.78010511398314,
+              35.78857856123255
+            ],
+            [
+              -78.78073811531067,
+              35.78860902180241
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Town Hall South",
+        "stdParking": 36,
+        "hcParking": 4,
+        "elecParking": 0,
+        "restrictions": "Parking for Town Hall M-F 8a-5p",
+        "entrance1": "-78.780766, 35.788708",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780314, 35.788845",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78079175949095,
+              35.788909275366265
+            ],
+            [
+              -78.78080248832703,
+              35.78877002747771
+            ],
+            [
+              -78.7800943851471,
+              35.78871563370498
+            ],
+            [
+              -78.78007292747498,
+              35.78877002747771
+            ],
+            [
+              -78.78005146980286,
+              35.78879831222482
+            ],
+            [
+              -78.78002732992172,
+              35.78880919097102
+            ],
+            [
+              -78.77998441457747,
+              35.78882877271045
+            ],
+            [
+              -78.7799334526062,
+              35.78884400294888
+            ],
+            [
+              -78.77987176179886,
+              35.78884400294888
+            ],
+            [
+              -78.77981543540955,
+              35.78884400294888
+            ],
+            [
+              -78.77977788448334,
+              35.78884400294888
+            ],
+            [
+              -78.77971887588501,
+              35.78885270594096
+            ],
+            [
+              -78.77969741821289,
+              35.7888679361748
+            ],
+            [
+              -78.7796813249588,
+              35.788898396633776
+            ],
+            [
+              -78.77966523170471,
+              35.788954966026566
+            ],
+            [
+              -78.77966254949568,
+              35.78899412942874
+            ],
+            [
+              -78.7796276807785,
+              35.789170364499746
+            ],
+            [
+              -78.77981543540955,
+              35.78918559467273
+            ],
+            [
+              -78.77986907958984,
+              35.788954966026566
+            ],
+            [
+              -78.77990663051605,
+              35.78891580260506
+            ],
+            [
+              -78.77994686365128,
+              35.788902748126965
+            ],
+            [
+              -78.77999514341354,
+              35.78890492387346
+            ],
+            [
+              -78.78034919500351,
+              35.78891797835122
+            ],
+            [
+              -78.78035992383957,
+              35.7888788149115
+            ],
+            [
+              -78.78079175949095,
+              35.788909275366265
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Herb Young Community Center",
+        "stdParking": 34,
+        "hcParking": 2,
+        "elecParking": 0,
+        "restrictions": "Community Center Parking",
+        "e1act": "true",
+        "entrance1": "-78.780305, 35.790111",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780560, 35.790309",
+        "active": "true",
+        "category": "public",
+        "note": ""
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78088295459747,
+              35.79042140469591
+            ],
+            [
+              -78.78088295459747,
+              35.790369187759815
+            ],
+            [
+              -78.78087759017944,
+              35.79032132220496
+            ],
+            [
+              -78.78086149692535,
+              35.790260402366144
+            ],
+            [
+              -78.78082931041718,
+              35.79022123958795
+            ],
+            [
+              -78.78076493740082,
+              35.79018642821335
+            ],
+            [
+              -78.78072738647461,
+              35.79018642821335
+            ],
+            [
+              -78.78061473369598,
+              35.79019077963601
+            ],
+            [
+              -78.78048598766327,
+              35.79020818532425
+            ],
+            [
+              -78.78041088581085,
+              35.79023429384949
+            ],
+            [
+              -78.78035724163055,
+              35.790269105203116
+            ],
+            [
+              -78.78029823303223,
+              35.79032567362021
+            ],
+            [
+              -78.78027141094208,
+              35.79038224199708
+            ],
+            [
+              -78.78088295459747,
+              35.79042140469591
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Cary Town Hall Parking Deck",
+        "stdParking": 432,
+        "hcParking": 0,
+        "elecParking": 2,
+        "restrictions": "Observe Posted Restrictions, 29 reserved locations",
+        "e1act": "true",
+        "note": "",
+        "entrance1": "-78.778708, 35.790191",
+        "entrance2": "-78.779914, 35.790602",
+        "e2act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.779092, 35.790589",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.7795740365982,
+              35.79083913894942
+            ],
+            [
+              -78.77964377403259,
+              35.79048667581777
+            ],
+            [
+              -78.7785279750824,
+              35.790351782106846
+            ],
+            [
+              -78.77846896648407,
+              35.790717300018976
+            ],
+            [
+              -78.7795740365982,
+              35.79083913894942
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Town Hall East",
+        "stdParking": 205,
+        "hcParking": 6,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions, if any",
+        "e1act": "true",
+        "note": "",
+        "entrance1": "-78.778944, 35.789145",
+        "entrance2": "-78.778388, 35.790087",
+        "e2act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.778418, 35.789464",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77868354320526,
+              35.790073291140615
+            ],
+            [
+              -78.77877473831177,
+              35.790034128270236
+            ],
+            [
+              -78.77904295921326,
+              35.78864600962154
+            ],
+            [
+              -78.77863526344298,
+              35.78871998520815
+            ],
+            [
+              -78.77835094928741,
+              35.78879831222482
+            ],
+            [
+              -78.77810955047607,
+              35.78888099065865
+            ],
+            [
+              -78.77793252468109,
+              35.78899412942874
+            ],
+            [
+              -78.77798080444336,
+              35.79009504828251
+            ],
+            [
+              -78.77868354320526,
+              35.790073291140615
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Cary Amtrak Station",
+        "stdParking": 116,
+        "hcParking": 12,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions, if any",
+        "entrance1": "-78.783179, 35.788383",
+        "e1act": "true",
+        "entrance2": "-78.781301, 35.788301",
+        "e2act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.782351, 35.788453",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78293752670288,
+              35.78815428779581
+            ],
+            [
+              -78.78281682729721,
+              35.788139057425205
+            ],
+            [
+              -78.78242522478104,
+              35.78812600281948
+            ],
+            [
+              -78.78241181373596,
+              35.78824784572267
+            ],
+            [
+              -78.78228038549422,
+              35.78821085771823
+            ],
+            [
+              -78.78204435110092,
+              35.788167342396854
+            ],
+            [
+              -78.78182977437973,
+              35.78819780312431
+            ],
+            [
+              -78.78160178661346,
+              35.78819127582657
+            ],
+            [
+              -78.78160178661346,
+              35.788276130655625
+            ],
+            [
+              -78.78162860870361,
+              35.78846977338776
+            ],
+            [
+              -78.78208190202713,
+              35.788585088498515
+            ],
+            [
+              -78.78256738185883,
+              35.78872651246248
+            ],
+            [
+              -78.78291070461273,
+              35.788817893966915
+            ],
+            [
+              -78.78292948007584,
+              35.788478476420835
+            ],
+            [
+              -78.78293752670288,
+              35.78815428779581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Fidelity Bank",
+        "stdParking": 33,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions",
+        "entrance1": "-78.781313, 35.787875",
+        "e1act": "true",
+        "entrance2": "-78.782113, 35.787328",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.781883, 35.787744",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78135502338408,
+              35.78790189842055
+            ],
+            [
+              -78.78204435110092,
+              35.7878018127567
+            ],
+            [
+              -78.78213286399841,
+              35.78771260586315
+            ],
+            [
+              -78.78213286399841,
+              35.78763645355771
+            ],
+            [
+              -78.78203630447388,
+              35.78761904730621
+            ],
+            [
+              -78.78201752901077,
+              35.78756682852888
+            ],
+            [
+              -78.7820228934288,
+              35.78737971096168
+            ],
+            [
+              -78.78185391426086,
+              35.787384062538024
+            ],
+            [
+              -78.78183513879776,
+              35.78763645355771
+            ],
+            [
+              -78.78180027008057,
+              35.78771043008398
+            ],
+            [
+              -78.78174126148224,
+              35.787745242543124
+            ],
+            [
+              -78.78162324428558,
+              35.78778005498702
+            ],
+            [
+              -78.78150522708893,
+              35.7878018127567
+            ],
+            [
+              -78.78134697675705,
+              35.78781269163931
+            ],
+            [
+              -78.78135502338408,
+              35.78790189842055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Cedar St.",
+        "stdParking": 50,
+        "hcParking": 5,
+        "elecParking": 0,
+        "restrictions": "Observe Posted Restrictions, if any",
+        "note": "",
+        "entrance1": "-78.777416, 35.788570",
+        "e1act": "true",
+        "entrance2": "-78.777036, 35.787597",
+        "e2act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.777360, 35.788359",
+        "active": "true",
+        "category": "public"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77750337123871,
+              35.78861554906585
+            ],
+            [
+              -78.77745240926743,
+              35.78796064429498
+            ],
+            [
+              -78.7771251797676,
+              35.787967171611676
+            ],
+            [
+              -78.77712786197662,
+              35.788071608605975
+            ],
+            [
+              -78.77733439207077,
+              35.788062905528356
+            ],
+            [
+              -78.77739071846008,
+              35.78864818537508
+            ],
+            [
+              -78.77750337123871,
+              35.78861554906585
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Post Office Academy St.",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "Restricted to Post Office, M-F 9A-5P",
+        "entrance1": "-78.781130, 35.786063",
+        "note": "",
+        "e1act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780856, 35.786051",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78057986497879,
+              35.786113392126325
+            ],
+            [
+              -78.78057986497879,
+              35.78612427124005
+            ],
+            [
+              -78.7810331583023,
+              35.786146029463
+            ],
+            [
+              -78.7810519337654,
+              35.78609163389442
+            ],
+            [
+              -78.78115117549896,
+              35.786095985541294
+            ],
+            [
+              -78.78115653991699,
+              35.78604376576329
+            ],
+            [
+              -78.78105729818344,
+              35.78603941411359
+            ],
+            [
+              -78.78106266260147,
+              35.78597413933926
+            ],
+            [
+              -78.78058522939682,
+              35.78596543603197
+            ],
+            [
+              -78.78057986497879,
+              35.786113392126325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "LaFarm Harrison Ave",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "For LaFarm M-Sa 7A-6P, Su 8A-4P ",
+        "entrance1": "-78.783405, 35.787625",
+        "note": "",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.783572, 35.787493",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78366976976395,
+              35.78763645355771
+            ],
+            [
+              -78.78361880779266,
+              35.78727962464027
+            ],
+            [
+              -78.78339886665344,
+              35.78729920675656
+            ],
+            [
+              -78.78343641757965,
+              35.78765168402463
+            ],
+            [
+              -78.78366976976395,
+              35.78763645355771
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "LaFarm W. Chatham St.",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "For LaFarm M-Sa 7A-6P, Su 8A-4P ",
+        "note": "",
+        "entrance1": "-78.784268, 35.787195",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.784280, 35.787369",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78420352935791,
+              35.78757770744365
+            ],
+            [
+              -78.78453075885773,
+              35.787542894911134
+            ],
+            [
+              -78.78446906805038,
+              35.78715560445842
+            ],
+            [
+              -78.78414183855057,
+              35.78719476874728
+            ],
+            [
+              -78.78420352935791,
+              35.78757770744365
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Post Office Waldo Street",
+        "stdParking": 15,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Restricted to Post Office, M-F 9A-5P",
+        "entrance1": "-78.780472, 35.786549",
+        "e1act": "true",
+        "townowned": "true",
+        "lotactive": "true",
+        "lotcenter": "-78.780472, 35.786343",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78063082695007,
+              35.786496336032776
+            ],
+            [
+              -78.78063082695007,
+              35.78621783155652
+            ],
+            [
+              -78.78033578395844,
+              35.7862091282759
+            ],
+            [
+              -78.78033578395844,
+              35.78649198440784
+            ],
+            [
+              -78.78063082695007,
+              35.786496336032776
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "East Chatham Shopping",
+        "stdParking": 56,
+        "hcParking": 4,
+        "elecParking": 0,
+        "note": "",
+        "restrictions": "Observe Posted Restrictions",
+        "entrance1": "-78.777656, 35.787582",
+        "e1act": "true",
+        "entrance2": "-78.778557, 35.787629",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.778161, 35.787650",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77856016159058,
+              35.788180396995756
+            ],
+            [
+              -78.77857089042664,
+              35.78792365615687
+            ],
+            [
+              -78.77836167812347,
+              35.78793235924974
+            ],
+            [
+              -78.77834022045135,
+              35.78775829721136
+            ],
+            [
+              -78.7785655260086,
+              35.78775394565553
+            ],
+            [
+              -78.77857625484467,
+              35.78755377382917
+            ],
+            [
+              -78.77760529518127,
+              35.78761034417904
+            ],
+            [
+              -78.77762138843536,
+              35.78777135187747
+            ],
+            [
+              -78.77827048301697,
+              35.787762648766964
+            ],
+            [
+              -78.77830803394318,
+              35.78817169393007
+            ],
+            [
+              -78.77856016159058,
+              35.788180396995756
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "South Harrison",
+        "stdParking": 45,
+        "hcParking": 0,
+        "elecParking": 0,
+        "note": "",
+        "restrictions": "Observe Posted Restrictions, if any",
+        "entrance1": "-78.783256, 35.786783",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.783044, 35.786725",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78323256969452,
+              35.78686622328159
+            ],
+            [
+              -78.7832647562027,
+              35.78656161037824
+            ],
+            [
+              -78.78275513648987,
+              35.78657031362024
+            ],
+            [
+              -78.78271222114563,
+              35.78679224596952
+            ],
+            [
+              -78.78295361995697,
+              35.786787894360785
+            ],
+            [
+              -78.78296434879303,
+              35.78683576204379
+            ],
+            [
+              -78.78300726413725,
+              35.786870574886024
+            ],
+            [
+              -78.78323256969452,
+              35.78686622328159
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Ashworth Village",
+        "stdParking": 57,
+        "hcParking": 2,
+        "elecParking": 0,
+        "note": "Public After Business Hours",
+        "e1act": "true",
+        "entrance1": "-78.781310, 35.786636",
+        "entrance2": "-78.781783, 35.787214",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.781732, 35.786820",
+        "active": "true",
+        "category": "restricted",
+        "restrictions": "Business Parking"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78188073635101,
+              35.78719259295397
+            ],
+            [
+              -78.78187537193298,
+              35.78662688467009
+            ],
+            [
+              -78.78181636333466,
+              35.78663123628763
+            ],
+            [
+              -78.78182172775269,
+              35.78654420389135
+            ],
+            [
+              -78.78136038780212,
+              35.78655290713528
+            ],
+            [
+              -78.78136038780212,
+              35.78668780729411
+            ],
+            [
+              -78.7816447019577,
+              35.78668345567967
+            ],
+            [
+              -78.78165006637573,
+              35.786709565362806
+            ],
+            [
+              -78.78163933753967,
+              35.78694890372533
+            ],
+            [
+              -78.781698346138,
+              35.78694890372533
+            ],
+            [
+              -78.78170907497406,
+              35.78719694454054
+            ],
+            [
+              -78.78188073635101,
+              35.78719259295397
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Cedar at Walker",
+        "stdParking": 30,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Tow Away Zone: Business Parking",
+        "note": "",
+        "entrance1": "-78.778665, 35.788012",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.778886, 35.788029",
+        "active": "true",
+        "category": "private"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77871036529541,
+              35.78796282006727
+            ],
+            [
+              -78.77869963645935,
+              35.788049850910134
+            ],
+            [
+              -78.77875328063965,
+              35.78811947551583
+            ],
+            [
+              -78.77909123897552,
+              35.78808901475835
+            ],
+            [
+              -78.77909123897552,
+              35.788049850910134
+            ],
+            [
+              -78.77912878990173,
+              35.788045499370284
+            ],
+            [
+              -78.77939164638519,
+              35.78803679628979
+            ],
+            [
+              -78.77943456172943,
+              35.787980226243484
+            ],
+            [
+              -78.77916634082794,
+              35.787980226243484
+            ],
+            [
+              -78.77871036529541,
+              35.78796282006727
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#ff2600",
+        "fill-opacity": 0.5,
+        "name": "Chatham Plaza",
+        "stdParking": 36,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Business Parking",
+        "note": "",
+        "entrance1": "-78.780488, 35.787425",
+        "e1act": "true",
+        "entrance2": "-78.780530, 35.787964",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.780501, 35.787693",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78044307231903,
+              35.78796282006727
+            ],
+            [
+              -78.7806361913681,
+              35.78794106234166
+            ],
+            [
+              -78.78058791160583,
+              35.78747109401464
+            ],
+            [
+              -78.78039479255676,
+              35.78747544558597
+            ],
+            [
+              -78.78044307231903,
+              35.78796282006727
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Annelore's front",
+        "stdParking": -1,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Business Parking Only",
+        "note": "",
+        "entrance1": "-78.786450, 35.786972",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.786567, 35.787044",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78661751747131,
+              35.78697066172256
+            ],
+            [
+              -78.78642976284026,
+              35.786988068116045
+            ],
+            [
+              -78.78646194934845,
+              35.7871012095808
+            ],
+            [
+              -78.78664433956146,
+              35.78707945161931
+            ],
+            [
+              -78.78661751747131,
+              35.78697066172256
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Annelore's back",
+        "stdParking": -1,
+        "hcParking": 0,
+        "elecParking": 0,
+        "restrictions": "Business Parking Only",
+        "note": "",
+        "entrance1": "-78.786450, 35.786972",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.786587, 35.787356",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78674626350403,
+              35.787440633008664
+            ],
+            [
+              -78.78673017024994,
+              35.78730573412756
+            ],
+            [
+              -78.7864351272583,
+              35.787331843606296
+            ],
+            [
+              -78.78646731376648,
+              35.78746674244308
+            ],
+            [
+              -78.78674626350403,
+              35.787440633008664
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Chocolate Smiles",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "Business Parking Only",
+        "note": "",
+        "entrance1": "-78.786812, 35.786938",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.786856, 35.787244",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.7871754169464,
+              35.78742322671429
+            ],
+            [
+              -78.78717005252838,
+              35.78730138254694
+            ],
+            [
+              -78.78697693347931,
+              35.787331843606296
+            ],
+            [
+              -78.78692865371704,
+              35.78706639683955
+            ],
+            [
+              -78.78673017024994,
+              35.787070748433045
+            ],
+            [
+              -78.78677308559416,
+              35.7873971172656
+            ],
+            [
+              -78.78683745861053,
+              35.78738841411411
+            ],
+            [
+              -78.78684282302856,
+              35.78744933615443
+            ],
+            [
+              -78.7871754169464,
+              35.78742322671429
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "Havana Grill",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "Business Parking Only",
+        "note": "",
+        "entrance1": "-78.788528, 35.786773",
+        "e1act": "true",
+        "entrance2": "-78.788207, 35.787278",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.788405, 35.786954",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78866672515868,
+              35.786988068116045
+            ],
+            [
+              -78.78863990306854,
+              35.786787894360785
+            ],
+            [
+              -78.78817319869995,
+              35.78682270722401
+            ],
+            [
+              -78.78824293613432,
+              35.787297030966094
+            ],
+            [
+              -78.78844678401947,
+              35.78727092147591
+            ],
+            [
+              -78.78841996192932,
+              35.787022880891584
+            ],
+            [
+              -78.78864526748657,
+              35.786996771311344
+            ],
+            [
+              -78.78866672515868,
+              35.786988068116045
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "The Perfect Piece",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "TOW AWAY ZONE - Business ONLY",
+        "note": "",
+        "entrance1": "-78.777985, 35.787433",
+        "e1act": "true",
+        "entrance2": "-78.778524, 35.787097",
+        "e2act": "true",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.778253, 35.787123",
+        "active": "false",
+        "category": "private"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77837777137756,
+              35.787384062538024
+            ],
+            [
+              -78.77837777137756,
+              35.787331843606296
+            ],
+            [
+              -78.77845287322998,
+              35.787297030966094
+            ],
+            [
+              -78.77845287322998,
+              35.78714037389644
+            ],
+            [
+              -78.77853333950043,
+              35.78712296753632
+            ],
+            [
+              -78.77853870391846,
+              35.78667040083487
+            ],
+            [
+              -78.7783294916153,
+              35.78667910406499
+            ],
+            [
+              -78.7783294916153,
+              35.78705769365188
+            ],
+            [
+              -78.7776267528534,
+              35.78707510002631
+            ],
+            [
+              -78.7776482105255,
+              35.78741887514011
+            ],
+            [
+              -78.77837777137756,
+              35.787384062538024
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "156 E. Chatham",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "TOW AWAY ZONE - Business ONLY",
+        "note": "",
+        "entrance1": "-78.779459, 35.787362",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.779612, 35.787277",
+        "active": "false",
+        "category": "private"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.77970814704895,
+              35.78722740563992
+            ],
+            [
+              -78.77953112125397,
+              35.78722740563992
+            ],
+            [
+              -78.77953112125397,
+              35.78734489834245
+            ],
+            [
+              -78.77972960472107,
+              35.787331843606296
+            ],
+            [
+              -78.77970814704895,
+              35.78722740563992
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "122 E. Chatham",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "Observe Reserved Parking as Marked",
+        "note": "",
+        "entrance1": "-78.780101, 35.787343",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.780151, 35.787153",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78016948699951,
+              35.787310085707944
+            ],
+            [
+              -78.78015875816345,
+              35.78701852929547
+            ],
+            [
+              -78.78010511398314,
+              35.78707510002631
+            ],
+            [
+              -78.78010511398314,
+              35.7873144372881
+            ],
+            [
+              -78.78016948699951,
+              35.787310085707944
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "120 E. Chatham",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "restrictions": "Observe Reserved Parking as Marked",
+        "entrance1": "-78.780690, 35.78727",
+        "e1act": "true",
+        "entrance2": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.78069, 35.787121",
+        "active": "true",
+        "category": "restricted"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78079175949095,
+              35.78719694454054
+            ],
+            [
+              -78.78078639507294,
+              35.78697936491977
+            ],
+            [
+              -78.78072202205658,
+              35.787001122908656
+            ],
+            [
+              -78.78067910671234,
+              35.786996771311344
+            ],
+            [
+              -78.78061473369598,
+              35.78700982610253
+            ],
+            [
+              -78.78061473369598,
+              35.78720999929885
+            ],
+            [
+              -78.78072738647461,
+              35.78724046039322
+            ],
+            [
+              -78.78079175949095,
+              35.78719694454054
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#0433ff",
+        "stroke-width": 4,
+        "stroke-opacity": 1,
+        "fill": "#00fdff",
+        "fill-opacity": 0.5,
+        "name": "122 E. Chatham - Back",
+        "stdParking": -1,
+        "hcParking": -1,
+        "elecParking": 0,
+        "entrance1": "-78.780101, 35.787343",
+        "e1act": "true",
+        "entrance2": "",
+        "e2act": "",
+        "townowned": "false",
+        "lotactive": "true",
+        "lotcenter": "-78.780346, 35.786927",
+        "active": "true",
+        "category": "restricted",
+        "restrictions": "Observe Posted Restrictions, if any"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.78045380115509,
+              35.786966310123596
+            ],
+            [
+              -78.78044843673705,
+              35.7869140909174
+            ],
+            [
+              -78.78022313117981,
+              35.7869140909174
+            ],
+            [
+              -78.78022849559784,
+              35.786975013321296
+            ],
+            [
+              -78.78045380115509,
+              35.786966310123596
             ]
           ]
         ]
