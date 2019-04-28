@@ -31,9 +31,10 @@ exports.createWelcomeScreenView = function (win) {
     win.leftNavButton = infoButton;
   }
   var caryConnectsLogo = Ti.UI.createImageView({
+    top: '1%',
     image: '/assets/icons/DefaultIcon_white_inside.png',
-    width: '80%',
-    height: 220
+    width: 340 + 'dp',
+    height: 190 + 'dp'
   });
 
   welcomeScreenView.add(caryConnectsLogo);
@@ -51,7 +52,6 @@ exports.createWelcomeScreenView = function (win) {
 
   var continueButton = Ti.UI.createButton({
     textAlign: textAlign,
-    verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
     top: "5%",
     height: '35dp',
     width: '140dp',

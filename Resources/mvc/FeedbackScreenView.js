@@ -29,8 +29,8 @@ exports.createfeedbackScreenView = function (win) {
 
   var caryConnectsLogo = Ti.UI.createImageView({
     image: '/assets/icons/DefaultIcon_white_inside.png',
-    width: '80%',
-    height: '110dp'
+    width: 340 + 'dp',
+    height: 190 + 'dp'
   });
 
   feedbackScreenView.add(caryConnectsLogo);
@@ -52,11 +52,10 @@ exports.createfeedbackScreenView = function (win) {
 
   var continueButton = Ti.UI.createButton({
     textAlign: textAlign,
-    verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
     top: "5%",
     height: '35dp',
-    width: '140dp',
-    title: 'Return to Map',
+    width: '200dp',
+    title: 'Send Feedback / Close',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
@@ -65,7 +64,6 @@ exports.createfeedbackScreenView = function (win) {
 
   });
   feedbackScreenView.add(continueButton);
-
 
   continueButton.addEventListener('touchstart', function () {
     continueButton.backgroundColor = '#ffffff';
