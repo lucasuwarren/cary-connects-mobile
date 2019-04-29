@@ -1,0 +1,1300 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Academy Street Bistro",
+        "address": "200 S. Academy Street, Cary, NC 27511",
+        "website": "www.academystreetbistro.com",
+        "phone": "(919) 377-0509",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.781481,
+          35.786495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "bakery",
+        "name": "Annelores German Bakery",
+        "address": "308 W Chatham St, Cary, NC 27511",
+        "website": "anneloresbakery.com",
+        "phone": "(919) 267-6846",
+        "note": "",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78661752,
+          35.78717084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "pharmacy",
+        "name": "Ashworth Drugs",
+        "address": "105 W Chatham St, Cary, NC 27511",
+        "website": "www.ashworthdrugs.com",
+        "phone": "(919) 467-1877",
+        "note": "Pharmacy, hot dogs, shakes and more",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78140599,
+          35.78719259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "beer",
+        "name": "Bond Brothers Beer Company",
+        "address": "202 E Cedar St, Cary, NC 27511",
+        "website": "www.bondbrothersbeer.com",
+        "phone": "919.459.2670",
+        "note": "Food Trucks: https://www.bondbrothersbeer.com/food-trucks",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.77780378,
+          35.78825437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "art-gallery",
+        "name": "Cary Arts Center",
+        "address": "101 Dry Ave, Cary, NC 27511",
+        "website": "www.townofcary.org/recreation-enjoyment/facilities/cary-arts-center",
+        "phone": "(919) 469-4069",
+        "note": "431-seat Theater",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78130406,
+          35.7827038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Cary Convenience and Tobacco",
+        "address": "260 W. Chatham Street, Cary, NC 27511",
+        "website": "",
+        "phone": "404-578-0372",
+        "note": "Convenience Store - Sells Propane",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78470778,
+          35.7873623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "garden",
+        "name": "Cary Florist",
+        "address": "100 Parkthrough Street, Cary, NC 27511",
+        "website": "www.caryflorist.com",
+        "phone": " 919-694-1600",
+        "note": "Florist Shop",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78437519,
+          35.78690104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "laundry",
+        "name": "Cary Laudrette",
+        "address": "261 W Chatham St, Cary, NC 27511",
+        "website": "",
+        "phone": "(919) 462-9666",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78542125,
+          35.78671392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "music",
+        "name": "Cary School of Music",
+        "address": "201 W. Chatham Street, Cary, NC 27511",
+        "website": "www.caryschoolofmusic.com",
+        "phone": "919-460-0052",
+        "note": "Music School",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78374755,
+          35.78676178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "alcohol-shop",
+        "name": "Chatham Hill Winery",
+        "address": "8245 Chapel Hill Rd, Cary, NC 27513",
+        "website": "www.chathamhillwine.com",
+        "phone": "(919) 380-7135",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.774237,
+          35.791816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "garden",
+        "name": "City Garden Design",
+        "address": "266 W. Chatham Street, Cary, NC 27511",
+        "website": "www.citygardendesign.com",
+        "phone": "919-538-4247",
+        "note": "",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78537297,
+          35.78717954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Creative Screening",
+        "address": "303 E Durham Rd, Cary, NC 27513",
+        "website": "www.facebook.com/pages/Creative-Screening",
+        "phone": "(919) 467-5081",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.775748,
+          35.790858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Glass Law Group",
+        "address": "201 W. Chatham Street, Cary, NC 27511",
+        "website": "www.glasslawnc.com",
+        "phone": "919-948-7633",
+        "note": "Estate Law Firm",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78386021,
+          35.78687928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "beer",
+        "name": "Jordan Lake Brewing Company",
+        "address": "320 E Durham Rd, Cary, NC 27513",
+        "website": "jordanlakebrewing.com",
+        "phone": "(919) 694-5096",
+        "note": "Food Trucks: http://jordanlakebrewing.com/#food",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.77575457,
+          35.79013856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Kababish Cafe",
+        "address": "201 W. Chatham Street, Cary, NC 27511",
+        "website": "kababishcafe.com",
+        "phone": "(919) 377-8794",
+        "note": "",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78351688,
+          35.786814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "bakery",
+        "name": "La Farm Bakery",
+        "address": "220 W. Chatham Street, Cary, NC 27511",
+        "website": "www.lafarmbakery.com",
+        "phone": "919-650-3117",
+        "note": "Bakery & Cafe",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78390044,
+          35.78737101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "clothing-store",
+        "name": "May Tailor and Cleaners",
+        "address": "258 W. Chatham Street, Cary, NC 27511",
+        "website": "",
+        "phone": "919-467-1152",
+        "note": "Tailor/Cleaner",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7846005,
+          35.78737971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "Natural Esthetics",
+        "address": "201 W. Chatham Street, Cary, NC 27511",
+        "website": "www.naturalesthetics.org",
+        "phone": "336-862-6946",
+        "note": "Skincare",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78394067,
+          35.78699677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "Orion Silver",
+        "address": "201 W. Chatham Street, Cary, NC 27511",
+        "website": "",
+        "phone": "919-377-0080",
+        "note": " Jewelry",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78376901,
+          35.78699677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "dog-park",
+        "name": "Pretty Paws, Inc.",
+        "address": "251 W. Chatham Street, Cary, NC 27511",
+        "website": "",
+        "phone": "919-469-9913",
+        "note": "Dog Grooming",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78510475,
+          35.78672697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "Ratatat-Tats",
+        "address": "300 Parkthrough St, Cary, NC 27511",
+        "website": "www.ratatat-tats.com",
+        "phone": "(919) 377-2035",
+        "note": "Tatoo Parlor",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.784452,
+          35.786732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "hairdresser",
+        "name": "Tart's Barber Shop",
+        "address": "200 Parkthrough St, Cary, NC 27511",
+        "website": "tartsbarbershop.com",
+        "phone": "(919) 467-8479",
+        "note": "Barber",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.784436,
+          35.78682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "art-gallery",
+        "name": "Village Art Circle",
+        "address": "200 S. Academy Street, Ste 130, Cary, NC 27511",
+        "website": "www.villageartcircle.com",
+        "phone": "(919) 210-0398",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.781744,
+          35.786465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Woody's Sports Tavern & Grill",
+        "address": "8322 Chapel Hill Rd, Cary, NC 27513",
+        "website": "www.woodysportstavern.co",
+        "phone": "(919) 380-7737",
+        "note": "Restaurant and Pub",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.776413,
+          35.792099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Alisa Huffman Family & Elder Law ",
+        "address": "311 S. Academy Street, Cary, NC 27511",
+        "website": "www.alisahuffman.com",
+        "phone": "(919) 655-0414",
+        "note": "Attorney",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780958,
+          35.78425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "Aradia Fitness Cary",
+        "address": "8240 Chapel Hill Rd., Cary, NC 27513",
+        "website": "cary.aradiafitness.com",
+        "phone": "(919) 801-2141",
+        "note": "Pole Fitness",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.779735,
+          35.791651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "business",
+        "name": "Cofounders Capital",
+        "address": "122 E. Chatham Street, Cary, NC 27511",
+        "website": "cofounderscapital.com",
+        "phone": "",
+        "note": "Business Incubator",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780224,
+          35.787198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Crosstown Pub & Grill",
+        "address": "140 E. Chatham Street, Cary, NC 27511",
+        "website": "www.crosstowndowntown.com",
+        "phone": "(919) 650-2853",
+        "note": "Restaurant and Pub",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.779798,
+          35.787272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Escentuelle",
+        "address": "417 Kildaire Farm Rd., Cary, NC 27511",
+        "website": "www.escentuelle.com",
+        "phone": "(919) 659-5661",
+        "note": "Perfumery",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780052,
+          35.78192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Everything's Better Monogrammed",
+        "address": "114 S. Academy Street, Cary, NC 27511",
+        "website": "everythingsbettermonogrammed.com",
+        "phone": "(919) 694-3261",
+        "note": "Boutique",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.781456,
+          35.78685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "International Minute Press",
+        "address": "8450 Chapel Hill Rd., Cary, NC 27513",
+        "website": "www.impcary.com",
+        "phone": "(919) 466-1095",
+        "note": "Printer",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780553,
+          35.791719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Juice Vapeorium Vape Shop",
+        "address": "8420 Chapel Hill Rd., Cary, NC 27513",
+        "website": "www.facebook.com/juicevapeorium",
+        "phone": "(919) 659-5646",
+        "note": "Vaping Supplies",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.779703,
+          35.791625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "name": "National Guns 'n Gear",
+        "address": "8420 Chapel Hill Rd., Cary, NC 27513",
+        "website": "www.nationalgunsandgear.com",
+        "phone": "(919) 439-0104",
+        "note": "Outdoor Gear",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7805,
+          35.79173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "hairdresser",
+        "name": "Papillon Salon",
+        "address": "800 Parkthrough Street, Cary, NC 27511",
+        "website": "ww.papillonthesalon.com",
+        "phone": "(919) 815-1306",
+        "note": "Hair Salon",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.784422,
+          35.786443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "beer",
+        "name": "Pharmacy Bottle + Beverage",
+        "address": "120 E. Chatham Street, Cary, NC 27511",
+        "website": "pharmacybottlebeverage.com",
+        "phone": "(919) 234-1098",
+        "note": "Beer Store and Pub",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78053,
+          35.787259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Fresh Local Ice Cream",
+        "address": "138 E. Chatham Street, Cary, NC 27511",
+        "website": "freshlocalicecream.com",
+        "phone": "(919) 234-1155",
+        "note": "Ice Cream Shop",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.779879,
+          35.787292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Pizzeria Faulisi",
+        "address": "215 E. Chatham Street, Cary, NC 27511",
+        "website": "pizzeriafaulisi.com",
+        "phone": "",
+        "note": "Pizza Restaurant",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.777561,
+          35.787691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Postmaster Restaurant and Bar",
+        "address": "160 E. Cedar Street, #160, Cary, NC 27511",
+        "website": "postmastercary.com",
+        "phone": "(919) 378-9493",
+        "note": "Restaurant",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.778789,
+          35.787928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Pro's Epicurean Market & Caf�",
+        "address": "211 E. Chatham Street, Cary, NC 27511",
+        "website": "prosepicurean.com",
+        "phone": "(919) 377-1788",
+        "note": "Italian Market and Caf�",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.777806,
+          35.787774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "hairdresser",
+        "name": "Professional Barbers of Cary",
+        "address": "8450 Chapel Hill Rd #105, Cary, NC 27513",
+        "website": "www.probarbersofcary.com",
+        "phone": "(919) 467-1601",
+        "note": "Barber",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780541,
+          35.79171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Red Leaf Tattoo",
+        "address": "8450 Chapel Hill Rd #107, Cary, NC 27513",
+        "website": "www.redleaftattoostudio.com",
+        "phone": "(919) 234-0271",
+        "note": "Tatoo Parlor",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780511,
+          35.791708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "building",
+        "name": "The Mayton Inn",
+        "address": "301 S. Academy Street, Cary, NC 27511",
+        "website": "maytoninn.com",
+        "phone": "(919) 670-5000",
+        "note": "Hotel",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.780904,
+          35.784844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "The Scott Korbin Agency",
+        "address": "209 S. Academy Street, Cary, NC 27511",
+        "website": "scottkorbin.hpw.com",
+        "phone": "(919) 606-4500",
+        "note": "Realtor",
+        "hocamember": "TRUE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.781058,
+          35.785853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Chatham Street Wine Market",
+        "address": "111 W. Chatham Street, Cary, NC 27511",
+        "website": "chathamstreetwine.com",
+        "phone": "(919) 377-2988",
+        "note": "Wine Shop",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78163933753967,
+          35.78719694454054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "bakery",
+        "name": "Once In A Blue Moon Bakery & Cafe",
+        "address": "115 W. Chatham Street, Ste G, Cary, NC 27511",
+        "website": "bluemoonbakery.com",
+        "phone": "(919) 319-6554",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78191292285919,
+          35.78666169760382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Serendipity Gourmet Deli",
+        "address": "118 S. Academy Street, Cary, NC 27511",
+        "website": "serendipitygourmetdelinc.com",
+        "phone": "(919) 469-1655",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78138720989227,
+          35.78676178470338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Roma's Italian Deli & Pizzeria",
+        "address": "203 N Harrison Ave, Cary, NC 27513",
+        "website": "romasitalian.net",
+        "phone": "(919) 468-1111",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78357589244843,
+          35.788049850910134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "bar",
+        "name": "The Neighborhood Sports Bar and Arcade",
+        "address": "301 N Harrison Ave, Cary, NC 27513",
+        "website": "neighborhoodbararcade.com",
+        "phone": "(919) 377-2344",
+        "note": "Bar & Arcade",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78395140171051,
+          35.788920154097305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Chocolate Smiles",
+        "address": "312 W Chatham St Suite 101, Cary, NC 27511",
+        "website": "chocolatesmiles.com",
+        "phone": "(919) 469-5282",
+        "note": "Chocolates and gifts",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7869930267334,
+          35.787096857988956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "restaurant",
+        "name": "Havana Grill",
+        "address": "404 W Chatham St, Cary, NC 27511",
+        "website": "havanagrillcary.com",
+        "phone": "(919) 460-8662",
+        "note": "Cuban, Mexican, El Salvadorian Food",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7885594367981,
+          35.78707945161931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Frantz Automotive Center",
+        "address": "410 W Chatham St, Cary, NC 27511",
+        "website": " frantzautomotive.com",
+        "phone": "(919) 469-5423",
+        "note": "Auto Repair",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.788902759552,
+          35.78701417769913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "restaurant",
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "name": "Maximillians Grill & Wine Bar",
+        "address": "8314 Chapel Hill Rd, Cary, NC 27513",
+        "website": "maximilliansgrill.com",
+        "phone": "(919) 465-2455",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.77604961395264,
+          35.79220111142092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "restaurant",
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "name": "BottleDog Bites & Brews",
+        "address": "8306 Chapel Hill Rd, Cary, NC 27513",
+        "website": "bottledogcary.com",
+        "phone": "(919) 694-5377",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.77606838941574,
+          35.79247524363311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "park2",
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "name": "Downtown Park",
+        "address": "319 S. Academy Street, Cary, NC 27511",
+        "website": "www.townofcary.org/recreation-enjoyment/parks-greenways-environment/parks/downtown-park",
+        "phone": "",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7808346748352,
+          35.78342402953597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "cafe",
+        "name": "Brew Coffee Bar",
+        "address": "120 E. Chatham Street, Cary, NC 27511",
+        "website": "www.brewcoffeebar.co/",
+        "phone": "(919) 377-1472",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78028213977814,
+          35.78720999929885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "theatre",
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "name": "The Cary Theater",
+        "address": "122 E Chatham St, Cary, NC 27511",
+        "website": "thecarytheater.com",
+        "phone": "(919) 462-2051",
+        "note": "Movies, Music, Comedy, and more",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7803840637207,
+          35.78725351514438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "name": "Cary Innovation Center",
+        "address": "201 W. Chatham St, Cary, NC 27511",
+        "website": "caryinnovationcenter.com",
+        "phone": "(919) 271-3079",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7836080789566,
+          35.78697936491977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "bar",
+        "name": "Cotton House Craft Brewers",
+        "address": "307 S. Academy Street, Cary, NC 27511",
+        "website": "cottonhousecraft.com",
+        "phone": "",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78094732761383,
+          35.78450761861216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0433ff",
+        "marker-size": "medium",
+        "marker-symbol": "town-hall",
+        "name": "Cary Town Hall",
+        "address": "316 N. Academy Street, Cary, NC 27513",
+        "website": "www.townofcary.org",
+        "phone": "(919) 469-4000",
+        "note": "",
+        "hocamember": "FALSE",
+        "active": "TRUE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.78058791160583,
+          35.789416222649635
+        ]
+      }
+    }
+  ]
+}

@@ -87,7 +87,7 @@ function loadPlaces() {
   // @todo check for a cached file
   // Use the app's included file
   var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,
-    'assets/data/places.geojson');
+    'assets/data/business.geojson');
   var blob = file.read();
   var text = blob.text;
   blob = null;
