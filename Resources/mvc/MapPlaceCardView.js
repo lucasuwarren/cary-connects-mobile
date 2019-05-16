@@ -6,7 +6,7 @@ exports.createPlaceCardView = function (win) {
 
   var clientHeight = Ti.Platform.displayCaps.platformHeight;
   if (Ti.UI.Android) {
-    clientHeight = Ti.Platform.displayCaps.platformHeight / (Ti.Platform.displayCaps.dpi / 160);
+    clientHeight = Ti.Platform.displayCaps.platformHeight / (Ti.Platform.displayCaps.dpi / 150);
   }
 
   // Start the view offscreen
