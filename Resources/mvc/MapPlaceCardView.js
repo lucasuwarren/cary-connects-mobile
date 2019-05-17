@@ -186,8 +186,8 @@ exports.createPlaceCardView = function (win) {
 
     // Determine constraints
     // @todo work on these...
-    if (top < 300) {
-      top = 300;
+    if (top < 90) {
+      top = 90;
     } else if (top > clientHeight - 160) {
       top = (clientHeight - 160);
     }
