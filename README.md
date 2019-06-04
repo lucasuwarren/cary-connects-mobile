@@ -9,7 +9,7 @@ at nearby places you plan to visit.
 * Get directions
 
 Available now on Google Play
-[https://play.google.com/store/apps/details?id=org.codeforcary.connects]
+https://play.google.com/store/apps/details?id=org.codeforcary.connects
 
 The app is built using Titanium from Axway to build Android and iOS apps from the same codebase.
 
