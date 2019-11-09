@@ -284,7 +284,9 @@
         "lotactive": "true",
         "lotcenter": "-78.779279, 35.786133",
         "active": "false",
-        "category": "restricted"
+        "category": "restricted",
+        "inactiveStart": "2019-04-29",
+        "inactiveEnd": "2019-05-01"
       },
       "geometry": {
         "type": "Polygon",
@@ -396,7 +398,8 @@
         "lotactive": "true",
         "lotcenter": "-78.780062, 35.786600",
         "active": "true",
-        "category": "public"
+        "category": "public",
+        "inactiveStart": "2019-05-02T20:10-04:00"
       },
       "geometry": {
         "type": "Polygon",
@@ -447,7 +450,8 @@
         "lotactive": "true",
         "lotcenter": "-78.780681, 35.788303",
         "active": "true",
-        "category": "public"
+        "category": "public",
+        "inactiveStart": ""
       },
       "geometry": {
         "type": "Polygon",
