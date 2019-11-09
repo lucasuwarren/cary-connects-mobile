@@ -36,34 +36,51 @@ exports.createfeedbackScreenView = function (win) {
   feedbackScreenView.add(caryConnectsLogo);
 
 
-  var feedbackScreenTextbox = Ti.UI.createTextArea({
-    width: '80%',
+  var feedbackScreenTextbox = Ti.UI.createTextField({
+    width: '275dp',
     top: '5%',
-    height: 'auto',
+    height: '30dp',
     color: '#000000',
     hintTextColor: '#666666',
     backgroundColor: '#ffffff',
-    hintText: 'Your comments',
-    verticalAlign: 1
-
+    hintText: 'Your comments'
   });
   feedbackScreenView.add(feedbackScreenTextbox);
 
+  var feedbackButtons = Ti.UI.createView({
+    top: '20dp',
+    height: '45dp',
+    width: '275dp'
+  });
+  feedbackScreenView.add(feedbackButtons);
 
   var continueButton = Ti.UI.createButton({
     textAlign: textAlign,
-    top: "5%",
+    left: 0,
     height: '35dp',
-    width: '200dp',
-    title: 'Send Feedback / Close',
+    width: '150dp',
+    title: 'Send Feedback',
     fontWeight: 'bold',
     borderRadius: '10dp',
     borderColor: '#ffffff',
     color: '#ffffff',
     backgroundColor: '#a051be'
-
   });
-  feedbackScreenView.add(continueButton);
+  feedbackButtons.add(continueButton);
+
+  var cancelButton = Ti.UI.createButton({
+    textAlign: textAlign,
+    right: 0,
+    height: '35dp',
+    width: '80dp',
+    title: 'Cancel',
+    fontWeight: 'bold',
+    borderRadius: '10dp',
+    borderColor: '#ffffff',
+    color: '#ffffff',
+    backgroundColor: '#a051be'
+  });
+  feedbackButtons.add(cancelButton);
 
   continueButton.addEventListener('touchstart', function () {
     continueButton.backgroundColor = '#ffffff';
@@ -72,6 +89,15 @@ exports.createfeedbackScreenView = function (win) {
   continueButton.addEventListener('endstart', function () {
     continueButton.backgroundColor = '#a051be';
     continueButton.color = '#ffffff';
+  });
+
+  cancelButton.addEventListener('touchstart', function () {
+    cancelButton.backgroundColor = '#ffffff';
+    cancelButton.color = '#a051be';
+  });
+  cancelButton.addEventListener('endstart', function () {
+    cancelButton.backgroundColor = '#a051be';
+    cancelButton.color = '#ffffff';
   });
 
   var feedbackScreenLabel = Ti.UI.createLabel({
@@ -89,7 +115,11 @@ exports.createfeedbackScreenView = function (win) {
 
   continueButton.addEventListener('click', function () {
     Ti.App.fireEvent('CloseFeedbackScreen');
+  });
 
+  cancelButton.addEventListener('click', function () {
+    feedbackScreenView.visible = false;
+    win.rightNavButton = infoButton;
   });
 
   Ti.App.addEventListener('CloseFeedbackScreen', function () {
